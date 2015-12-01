@@ -1,0 +1,233 @@
+#id;name;height;type;region;cantons;range;isolation;isolationPoint;prominence;prominencePoint;caption
+0;Albis, Bürglen;916;Hauptgipfel;Mittelland;;Albiskette;12;Wilerberg;376;Sihlbrugg Punkt 540;Albiskette vom Uetliberg
+1;Aletschhorn;4193;Hauptgipfel;Wallis;;Aletschgebiet;13.3;Finsteraarhorn;1020;Lötschenlücke;Aletschhorn von Süden
+2;Allalinhorn;4027;Nebengipfel;Walliser Alpen;;;2.1;Rimpfischhorn;255;Alphubeljoch;Allalinhorn von Nordost
+3;Alperschällihorn;3036;Hauptgipfel;Adula-Alpen;;Splügener Kalkberge;4.9;Bruschghorn;425;Alperschällilücke;Alperschällihorn von Osten
+4;Alphubel;4206;Hauptgipfel;Wallis;;Mischabel-Gruppe;2.1;Täschhorn;359;Mischabeljoch;Alphubel vom Allalinhorn
+5;Altels;3629;Nebengipfel;Berner Alpen;;Balmhorngruppe;1.27;Balmhorn;101;Punkt 3528 E zum Balmhorn;Altels
+6;Altenalptürm;2033;Nebengipfel;Ostschweiz;;Alpstein;0.43;Hängeten;133;Lötzlialpsattel;Altenalp Türm von Westen
+7;Altmann;2436;Hauptgipfel;Ostschweiz;;Alpstein;2.45;Säntis;315;Rotsteinpass;über dem Seealpsee, Altmann links
+8;Alvier;2343;Nebengipfel;Ostschweiz;;Alvierkette;2.62;Gross-Fulfirst;243;Punkt 2100;Alvier 2ter von rechts
+9;Aubrig;1695;Hauptgipfel;Schwyz;;Schwyzer Alpen;6.28;Fluebrig;327;Fläschlihöchi;Aubrig
+10;Bächenstock;2944;Nebengipfel;Urner Alpen;;Diederberge;0.6;Rienzenstock;53;Punkt 2891;Bächenstock von der Fellilücke
+11;Bachtel;1115;Hauptgipfel;Mittelland;;Zürcher Oberland;4.7;Dürrspitz;358;Gibswil;Bachtel vom Pfäffikersee
+12;Badus;2928;Hauptgipfel;Graubünden/Uri;;Gotthardmassiv;5.05;Piz Ravetsch;529;Pass Tagliola /Lolenpass;Badus/Six Madun
+13;Balmhorn;3698;Hauptgipfel;Berner Alpen;;Balmhorngruppe;12.85;Bietschhorn;1008;Lötschenpass;Balmhorn
+14;Bella Tola;3025;Nebengipfel;Wallis;;;3.85;Turtmannspitze;235;Meidpass;Bella Tola links und Rothorn rechts
+15;Bellavista;3922;Nebengipfel;Engadin;;Berninagruppe;0.66;Piz Zupò;82;Pass dal Zupo;Bellavista von Bovalhütte
+16;Bietschhorn;3934;Hauptgipfel;Wallis;;Aletsch;14;Aletschhorn;906;Beichpass;Bietschhorn über dem Lötschental
+17;Bifertenstock;3419;Hauptgipfel;Glarner Alpen;;Brigelserhörner;2.85;Glarner Tödi;357;Punkt 3062 westlich Bündner Tödi;Bifertenstock aus Nordost von Braunwald
+18;Blüemlisalp;3661;Hauptgipfel;Berner Alpen;;Blüemlisalp(gruppe);8.5;Breithorn;874;Tschingelpass;Blüemlisalp, Mitte, vom Oeschinensee
+19;Blüemlisalp Rothore;3297;Nebengipfel;Berner Alpen;;Blüemlisalpgruppe;0.72;Blüemlisalphorn;46;NE;Blüemlisalp Rothore links
+20;Born;719;Nebengipfel;Mittelland;;;4.21;Homberg;287;Härkingen;Born von Westen über der Kirche von Gunzgen
+21;Bös Fulen;2801;Hauptgipfel;Glarner Alpen;;Silberen-Glärnisch;4.4;Bächistock;368;Punkt 2434 NE;Bös Fulen Nordseite
+22;Breithorn BE/VS;3780;Hauptgipfel;Berner Alpen;;;4.75;Mittaghorn;443;Schmadrijoch;Breithorn von Norden
+23;Breithorn VS;4164;Hauptgipfel;Walliser Alpen;;;5.69;Castor;433;Schwarztor;Breithorn von Westen
+24;Brienzer Rothorn;2350;Hauptgipfel;Emmentaler Alpen;;;10.71;Flanke Gärstenhoren;1242;Brünigpass;Brienzer Rothorn von Osten
+25;Brisen;2404;Nebengipfel;Zentralschweiz;;Urner Alpen;0.58;Hoh Brisen;70;Sattel zum Hoh Brisen;Brisen beim Aufstieg vom westlich gelegenen Haldigrat
+26;Brisi;2279;Hauptgipfel;Walensee;;Churfirsten;2.14;Hinterrugg;325;Punkt 1954;Brisi vierter von links
+27;Brünnelistock;2133;Nebengipfel;Glarner Alpen;;;4.64;Redertenstock;250;Ober Zindeln;Brünnelistock von Osten über dem Obersee
+28;Bruschghorn;3056;Hauptgipfel;Adula-Alpen;;;16.71;Fanellhorn;570;Safierberg;Bruschghorn von Turrahuus
+29;Burgfeldstand;2063;Hauptgipfel;Emmentaler Alpen;;Güggisgrat;9.4;Augstmatthorn;537;Grüenenbergpass;Güggisgrat von Nordwest
+30;Haldensteiner Calanda;2806;Hauptgipfel;Bündner Rheintal;;Calanda;6.8;Punkt 2973 E Ringelspitz;1449;Kunkelspass;Calanda aus Südwesten
+31;Camoghè;2228;Nebengipfel;Tessin;;;6.32;Pizzo di Gino (Italien);247;Bochetta di Revolte;Camoghè von Locarno
+32;Castor;4228;Nebengipfel;Walliser Alpen;;;1.67;Liskamm;165;Felikjoch;Castor von Norden
+33;Chli Rinderhorn;3003;Nebengipfel;Berner Alpen;;Gemmi;1.13;Rinderhorn;94;Rindersattel;Chli Rinderhorn von Norden
+34;Chli Windgällen;2986;Nebengipfel;Urner Alpen;;;1.73;Gross Windgällen;265;Windgällenlücke 2721;Chli Windgällen aus Südwesten
+35;Chöpfenberg;1896;Hauptgipfel;Glarner Alpen;;;1.86;Tierberg GL;465;Scheidegg;Chöpfenberg von Nordwest
+36;Chrüzberg;2065;Nebengipfel;Ostschweiz;;Alpstein;0.43;Mutschen;85;zum Mutschen;Chrüzberg, auch genannt Kreuzberge
+37;Chumigalm;2125;Nebengipfel;Simmental;;;1.33;Fromattgrat;138;Gubi;Chumigalm aus Südwesten
+38;Clariden;3267;Hauptgipfel;Klausenpass;;;3.6;Schärhorn;315;Claridenpass;Clariden von Nordost
+39;Dammastock;3630;Hauptgipfel;Urner Alpen;;;23;Oberaarhorn;1466;Grimselpass;Dammastock von Dammahütte
+40;Daubenhorn;2942;Nebengipfel;Berner Alpen;;Leeshörner;0.66;Punkt 2974 beim Daubenjoch;92;Punkt 2850;Daubenwand im Februar 2014
+41;Dent Blanche;4357;Hauptgipfel;Walliser Alpen;;;7.4;Matterhorn;895;Col d'Herens;Dent Blanche
+42;Dent du Salantin;2482;Nebengipfel;Walliser Alpen;;;0.91;Rochers de Gagnerie;270;Col du Jorat;Dent du Salantin vom Bahnhof Martigny
+43;Dents du Midi;3257;Hauptgipfel;Walliser Alpen;;;18.23;Aiguille du Tour;1729;Col de la Forclaz;Dent Blanche
+44;Dirruhorn;4035;Nebengipfel;Walliser Alpen;;Mischabel-Gruppe;0.9;Hobärghorn;123;Dirrujoch;Dirruhorn von Westen
+45;Doldenhorn;3643;Hauptgipfel;Berner Alpen;;;3.65;Blüemlisalp;659;Fründenjoch;Doldenhorn (mitte) von Kandersteg
+46;Dom;4545;Hauptgipfel;Walliser Alpen;;Mischabel-Gruppe;17;Nordend;1010;Punkt 3535 Weisstor;Dom von Südosten
+47;Dreieckhorn;3811;Nebengipfel;Wallis;;Aletsch;2.53;Aletschhorn;188;Punkt 2623 westlich;Dreieckhorn
+48;Dufourspitze;4634;Hauptgipfel;Wallis;;Monte Rosa;78.2;Mont Blanc;2165;Col du Gd.St.Bernard;Dufourspitze vom Gornergrat
+49;Eiger;3970;Hauptgipfel;Berner Alpen;;;2.3;Mönch;356;Nördliches Eigerjoch;Eiger aus Nordwest
+50;Engelberger Rotstock;2818;Nebengipfel;Urner Alpen;;;1.09;Wissigstock;132;Engelberger Lücke;Wissigstock rechts, Engelberger Rotstock links.jpg
+51;Etzel;1098;Nebengipfel;Schwyz;;Schwyzer Alpen;2.86;über Chörnlisegg;148;Etzelpass;Etzel von Richterswil, aus Nordwest
+52;Faulhorn;2681;Nebengipfel;Berner Alpen;;;1.02;Simelihorn;105;Punkt 2575 E zum Gassenhorn;Faulhorn
+53;Fänerenspitz;1506;Nebengipfel;Voralpen;;Alpstein;2.4;Oberkamor;220;Punkt 1286;Fänerenspitz
+54;Fellihorn;2125;Nebengipfel;Urner Alpen;;;0.39;Punkt 2134;72;;Fellihorn von Norden
+55;Felsberger Calanda;2700;Nebengipfel;Bündner Rheintal;;Calanda;2.5;Haldensteiner Calanda;253;;Calanda aus Südwesten
+56;Fil de Cassons;2694;Nebengipfel;Glarner Alpen;;Sardona Tektonik-Arena;2.6;Piz Dolf;143;Fuorcla Raschaglius;Fil de Cassons vom Piz Dolf
+57;Finsteraarhorn;4274;Hauptgipfel;Berner Alpen;;;51.65;Dom;2265;Simplonpass;Finsteraarhorn
+58;Fisistock, Innerer;2787;Nebengipfel;Berner Alpen;;Blüemlisalp;1.01;Fisipass;59;Punkt 2728;Innerer Fisistock und Doldenhorn rechts
+59;Fronalpstock;2124;Nebengipfel;Glarner Alpen;;;2.58;Mürtschenstock;272;Fronalppass;Fronalpstock von Mollis aus NW gesehen
+60;Frümsel;2267;Nebengipfel;Walensee;;Churfirsten;0.89;Brisi;222;Punkt 2045;Frümsel fünfter von links
+61;Furggelenstock;1656;Nebengipfel;Zentralschweiz;;;3.39;Mythen;229;Müsliegg;Furggelenstock von Westen
+62;Gäbris;1251;Hauptgipfel;Ostschweiz;;Voralpen;4.75;Fänerenspitz;367;Eggerstanden;Gäbris von der Bogartenlücke
+63;Gauschla;2310;Nebengipfel;Ostschweiz;;Alvierkette;1.08;Alvier;125;Punkt 2185;Gauschla, rechts, gesehen aus Rhein (von Süden)
+64;Bächistock;2914;Hauptgipfel;Schwyzer Alpen;;Glärnisch;17.2;Gemsfairenstock;967;Klausenpass;Glärnisch-Massiv von Westen
+65;Glishorn;2525;Nebengipfel;Walliser Alpen;;Weissmiesgruppe;0.8;Fülhorn;46;Punkt 2479;Glishorn von Norden
+66;Gonzen;1830;Nebengipfel;Ostschweiz;;Alvierkette;3.9;Gauschla;162;Punkt 1668;Gonzen (links) von Süden
+67;Grand Combin;4314;Hauptgipfel;Walliser Alpen;;;25.5;Dent Blanche;1517;Fenêtre de Durand;Grand Combin
+68;Gspaltenhorn;3436;Hauptgipfel;Berner Alpen;;;3.29;Morgenhorn;599;Gamchilücke;Gspaltenhorn
+69;Günerhorn;2849;Nebengipfel;Graubünden;;Signinagruppe;1;Piz Fess;91;Punkt 2758;Signinagruppe mit Günerhorn ganz rechts
+70;Gwächtenhorn;3420;Nebengipfel;Urner Alpen;;;1.49;Sustenhorn;218;Chelenlücke;Gwächtenhorn
+71;Gurten;858;Nebengipfel;Mittelland;;;2.23;Ulmizberg;215;Köniztal;Gurten vom Marzili
+72;Hahnen;2606;Nebengipfel;Urner Alpen;;;2.67;Wissberg;117;Punkt 2489;Hahnen von Westen über Engelberg
+73;Hausstock;3158;Hauptgipfel;Glarner Alpen;;;11.4;Bifertenstock;655;Kistenpass;Hausstock von NE
+74;Hinterrugg;2306;Hauptgipfel;Walensee;;Churfirsten;4.96;Sichelchamm;467;Nideri;Hinterrugg ganz links
+75;Hochflue (Rigi);1698;Hauptgipfel;Schwyzer Alpen;;Rigi;7.14;Fronalpstock (Schwyz);508;Gätterli;Hochflue von Osten
+76;Hoher Hirschberg;1174;Nebengipfel;Ostschweiz;;Voralpen;3.75;Fänerenspitz;231;Stoss AR;Hirschberg rechts aus NO von Altstätten
+77;Hochwang;2535;Hauptgipfel;Graubünden;;Hochwangkette;10.07;Aroser Weisshorn;416;Durannapass;Hochwang
+78;Hoch Geissberg;2395;Nebengipfel;Urner Alpen;;Sunnig Stöck;0.38;Rund Stock;61;Grat zum Rund Stock;Hoch Geissberg rechts
+79;Hochhus;1926;Nebengipfel;Ostschweiz;;Alpstein;0.9;Hüser;111;Sattel;Hochhus von Norden
+80;Hochstollen;2481;Nebengipfel;Urner Alpen;;;2.42;Glogghüs;160;Wit Ris;Ostseite des Hochstollen
+81;Hoh Brisen;2413;Hauptgipfel;Zentralschweiz;;Urner Alpen;4.46;Ruchstock;498;Sinsgäuer Schonegg;Hoh Brisen vom Brisen, rechts Uri Rotstock
+82;Hoher Kasten;1791;Nebengipfel;Voralpen;;Alpstein;3.65;Stauberenkanzel;201;Punkt 1590 bei Wänneli;Hoher Kasten
+83;Hohgant;2197;Hauptgipfel;Voralpen;;;6.14;Tannhorn;638;Feldmoos;Trogenhorn aus Südwest, rechts Hohgant
+84;Hundwiler Höhi;1306;Hauptgipfel;Ostschweiz;;Voralpen;5.35;St Jakob, Kronberg;402;Punkt 904;Hundwiler Höhi
+85;Hundstein;2157;Nebengipfel;Ostschweiz;;Alpstein;1.97;Fälentürm;140;Schlucht zur Freiheit;Hundstein rechts
+86;Hüser;1951;Hauptgipfel;Ostschweiz;;Alpstein;2.62;Chrüzberg;302;Saxer Lücke;Hüser aus NO
+87;Jakobshorn;2590;Nebengipfel;Bündner Alpen;;;1.1;Jatzhorn;45;;Jakobshorn von Nordwest
+88;Jungfrau;4158;Hauptgipfel;Berner Alpen;;Jungfrau;8.3;Aletschhorn;629;Unners Mönchsjoch;Jungfrau
+89;Irchel;694;Nebengipfel;Mittelland;;;17.5;Lägern;260;Henggart (zum Schauenberg);Irchel aus Norden
+90;Kamor;1751;Nebengipfel;Ostschweiz;;Voralpen;0.68;Hoher Kasten;73;Kastensattel;Kamor links
+91;Kronberg;1663;Hauptgipfel;Voralpen;;Alpstein;3.92;Öhrli;351;Brugger Wald;Kronberg
+92;Lägern;866;Hauptgipfel;Mittelland;;;17.86;Uetliberg;425;Pöschwies Regensdorf zum Bachtel;Lägern von Osten
+93;Lagginhorn;4010;Hauptgipfel;Walliser Alpen;;;3.53;Weissmies;611;Lagginjoch;Lagginhorn
+94;Leistchamm;2101;Nebengipfel;Churfirsten;;Walensee;1.26;Nägeliberg;149;Gocht;Leistchamm aus Linthebene von Westen
+95;Le Rubli;2285;Nebengipfel;Waadt;;Saanenland;3;Pointes de Sur Combe;251;Col de la Videman;Le Rubli von Nordost
+96;Les Diablerets;3210;Hauptgipfel;Waadt;;Walliser Alpen;14.4;Wildhorn;1208;Sanetsch;Les Diablerets von Südwest
+97;Liskamm;4527;Hauptgipfel;Wallis/Italien;;Walliser Alpen;2.9;Zumsteinspitze;376;Lisjoch;Liskamm von der Dufourspitze
+98;Ludwigshöhe;4341;Nebengipfel;Wallis/Italien;;Monte Rosa;0.66;Parrotspitze;54;Pjodejoch; 
+99;Marwees;2056;Nebengipfel;Ostschweiz;;Alpstein;0.87;Hundstein;200;Widderalpsattel;Marwees links, rechts Säntis
+100;Matterhorn;4478;Hauptgipfel;Wallis/Italien;;Walliser Alpen;10.9;Liskamm;1030;Col Durand;Matterhorn von Riffelalp
+101;Moleson;2002;Hauptgipfel;Freiburger Alpen;;;4.75;Dent de Lys;492;Belle Chaux;Moleson
+102;Mönch;4107;Hauptgipfel;Berner Alpen;;Jungfraugebiet;7.3;Jungfrau;643;Jungfraujoch;Mönch mit Eigergletscher
+103;Montalin;2266;Nebengipfel;Graubünden;;Hochwangkette;1.84;Ful Berg;100;Punkt 2166 beim Gromser Chopf;Montalin von Chur
+104;Basòdino;3272;Hauptgipfel;Tessin;;Tessiner Alpen;8;Rothorn;959;Passo San Giacomo;Monte Basòdino
+105;Monte Generoso;1701;Hauptgipfel;Tessin;;Tambogruppe;16.61;Cima dell'Oress;1321;Cardano;Monte Generoso vom Langensee aus Nordwest
+106;Monte Leone;3553;Hauptgipfel;Wallis;;Lepontinische Alpen;12.5;Fletschhorn;1544;Simplonpass;Monte Leone vom Simplonpass
+107;Monte San Giorgio;1097;Hauptgipfel;Kanton Tessin;;;3.64;Bellavista;756;bei Piamo-Superiore;Monte San Giorgio (links) von Norden
+108;Monte San Salvatore;912;Hauptgipfel;Kanton Tessin;;;5.37;Monte Bre;557;Lugano Creminione;Monte San Salvatore von Nordost
+109;Monte Tamaro;1962;Hauptgipfel;Kanton Tessin;;Tambogruppe;15;Madone;1408;Monte Ceneri;Monte Tamaro von Norden
+110;Morgenberghorn;2249;Hauptgipfel;Berner Alpen;;;2.48;Schwalmere;370;Renggli;Morgenberghorn vom Niesen
+111;Morgenhorn;3623;Nebengipfel;Berner Alpen;;Blüemlisalpgruppe;0.72;Wyssi Frau;43;W;Morgenhorn, der linke der drei höchsten Gipfel
+112;Mürtschenstock;2441;Hauptgipfel;Glarner Alpen;;Mürtschenstock;5.39;Bützistock;581;Mürtschenfurggel;Mürtschenstock von Rüschlikon
+113;Mythen, Grosser;1898;Hauptgipfel;Zentralschweiz;;Schwyzer Alpen;8.07;Fronalpstock (Schwyz);493;Holzegg;Mythen von Westen
+114;Kleiner Mythen;1811;Hauptgipfel;Zentralschweiz;;Schwyzer Alpen;1.34;Grosser Mythen;373;Zwüschet Mythen;Kleiner Mythen von Osten
+115;Nadelhorn;4327;Nebengipfel;Walliser Alpen;;Mischabelgruppe;1.7;Dom;206;Lenzjoch;Nadelhorn von Nordost
+116;Napf;1408;Hauptgipfel;Bern;;Emmentaler Alpen;11.42;Farneren;558;Escholzmatt;Napfgipfel
+117;Namenlos;2915;Hauptgipfel;Schwyzer Alpen;;Glärnisch;5.6;Gemsfairenstock;967;Klausenpass;Namenlos von Westen
+118;Nesthorn;3822;Hauptgipfel;Wallis;;Aletsch;5.6;Bietschhorn;314;Redetschjoch;Nesthorn
+119;Nidfurner Turm;2661;Nebengipfel;Glarner Alpen;;Glärnisch;0.49;Schwander Grat;31;auf schwindendem Gletscher;Nidfurner Turm von Nordost
+120;Niederbauen Kulm;1923;Hauptgipfel;Vierwaldstättersee;;Urner Alpen;2.07;Oberbauenstock;327;Punkt 1596 im Süden;Niederbauen Chulm von Brunnen
+121;Niederhorn;1963;Nebengipfel;Emmentaler Alpen;;Güggisgrat;1.29;Güggisgrat Punkt 1979;43;Hohseil 1920m;Niederhorn von Norden vor Blüemlisalp und Gspaltenhorn
+122;Niesen;2362;Hauptgipfel;Berner Alpen;;;2.33;Fromberghore;407;Niesegrat;Niesen von Norden
+123;Oberbauenstock;2117;Nebengipfel;Vierwaldstättersee;;Urner Alpen;4.05;Schwalmis;287;Punkt 1830 im W;Oberbauen ganz links
+124;Oberalpstock;3328;Hauptgipfel;Uri/Graubünden;;Glarner Alpen;12.8;Stoc Grond;708;Fuorcla da Cavardiras;Oberalpstock von Südost
+125;Oberhorn;2796;Nebengipfel;Graubünden;;Signinagruppe;1.18;Piz Fess;109;Punkt 2787;Oberhorn vom Churer Rheintal gesehen
+126;Oeschinenhorn;3297;Nebengipfel;Berner Alpen;;Blüemlisalpgruppe;0.98;Blüemlisalphorn;119;Rothornsattel;Oeschinenhorn rechts
+127;Ofen;2873;Nebengipfel;Glarner Alpen;;Sardona Tektonik-Arena;1.2;Piz Grisch;113;Grischsattel;Ofen links, mit Tschingelhörnern
+128;Olmenhorn;3314;Nebengipfel;Wallis;;Aletsch;1.34;Punkt 3455 namenlos;69;Punkt 3245 nordwestlich;Olmenhorn über dem Aletschgletscher
+129;Ortstock;2717;Hauptgipfel;Glarner Alpen;;;4.7;Bös Fulen;539;Ruosalper Chulm;Ortstock links
+130;Parrotspitze;4432;Nebengipfel;Wallis/Italien;;Monte Rosa;0.95;Signalkuppe;136;Seserjoch;Parrotspitze von Süden, rechts Signalkuppe
+131;Pfannenstiel;853;Hauptgipfel;Mittelland;;Pfannenstiel;15.71;Bachtel;336;Adletshusen;Pfannenstiel von Südwest
+132;Pilatus;2128;Hauptgipfel;Emmentaler Alpen;;Pilatus;16.98;Brisen;557;Blattli;Pilatus
+133;Plattenflue;3013;Nebengipfel;Bündner Alpen;;;0.86;Hoch Ducan;120;Punkt 2893;Plattenflue über Sertig
+134;Piz Arblatsch;3203;Nebengipfel;Graubünden;;Oberhalbstein;2.23;Piz Forbesch;237;Grat zum Forbesch;Piz Arblatsch links
+135;Piz Argient;3945;Nebengipfel;Engadin;;Berninagruppe;0.52;Piz Zupò;99;Fuorcla dal Zupo;Piz Argient, mitte
+136;Piz Bernina;4049;Hauptgipfel;Graubünden;;Berninagruppe;137.6;Finsteraarhorn;2234;Malojapass;Piz Bernina von Bovalhütte
+137;Piz Beverin;2998;Hauptgipfel;Graubünden;;Adula-Alpen;5.13;Punkt 3044;393;Carnusapass;Piz Beverin vom Heinzenberg
+138;Piz Buin;3312;Hauptgipfel;Graubünden;;Silvretta;4.71;Fluchthorn;544;Pass Futschöl;Piz Buin von Norden
+139;Piz Caschleglia;2936;Hauptgipfel;Graubünden;;Vorderrhein;2.2;Fil Liung;411;Fuorcla da Lavaz;Piz Cascheglia (rechts) von Westen
+140;Piz Curvér;2972;Hauptgipfel;Graubünden;;Oberhalbstein;8.42;Piz Arlos;408;Pass da Schmorras;Piz Curvér über Parsonz
+141;Piz Daint;2968;Hauptgipfel;Graubünden;;Val Müstair;4.64;Piz Pala Gronda;734;Pass Döss Radond;Piz Daint von Norden
+142;Piz Dolf;3028;Nebengipfel;Glarner Alpen;;Sardona Tektonik-Arena;1.1;Piz Segnas;228;Sardonapass;Piz Segnas links, Piz Dolf rechts
+143;Piz Ela;3339;Hauptgipfel;Graubünden;;Albulatal;6.71;Piz d'Err;508;Furschela da Tschitta;Piz Ela über Bergün
+144;Piz Fess;2880;Hauptgipfel;Graubünden;;Signinagruppe;12.4;Piz Tomül;410;Güner Lückli;Gipfel vom Punkt 2874
+145;Piz Forbesch;3262;Hauptgipfel;Graubünden;;Oberhalbstein;3.86;Piz Platta;601;Fuorcla Curtegns;Forbesch Doppelzacke rechts
+146;Piz Kesch;3418;Hauptgipfel;Graubünden;;Adula;23.5;Piz Bernina;1502;Lukmanierpass;Piz Kesch
+147;Piz Morteratsch;3751;Hauptgipfel;Engadin;;Berninagruppe;2.16;Piz Bianco;320;Fuorcla Pievlusa;Piz Morteratsch von Norden
+148;Piz Mitgel;3159;Hauptgipfel;Graubünden;;Oberhalbstein;1.93;Tinzenhorn;440;unter Punkt 2758;Piz Mundaun von Nordost
+149;Piz Mundaun;2064;Nebengipfel;Graubünden;;Mundaun-Kette;1.55;Hitzeggerkopf;79;Punkt 1985;Piz Mundaun von Nordost
+150;Piz Nair;3010;Nebengipfel;Graubünden;;Nationalpark;2.24;Piz Tarvü;238;Punkt 2772 zum Piz Foraz;Piz Nair von Westen
+151;Piz Palü;3900;Nebengipfel;Graubünden;;Berninagruppe;2.21;Punkt 3922, Bellavista;212;Fuorcla Bellavista;Palü von Diavolezza
+152;Piz Riein;2762;Nebengipfel;Graubünden;;Signinagruppe;1.7;Piz Fess;65;Schneeboden Punkt 2681;Signinagruppe mit Piz Riein links
+153;Piz Roseg;3937;Hauptgipfel;Engadin;;Berninagruppe;1.49;Piz Scerscen;415;Porta da Roseg;PizRoseg
+154;Piz Segnas;3099;Hauptgipfel;Glarner Alpen;;Sardona Tektonik-Arena;4;Piz da Sterls;607;Trinser Furgga;Piz Segnas links
+155;Piz Sardona;3056;Nebengipfel;Glarner Alpen;;Sardona Tektonik-Arena;1.1;Piz Segnas;113;Surenjoch;Piz Sardona
+156;Piz Sezner;2309;Nebengipfel;Graubünden;;Mundaun-Kette;2.75;Um Su;230;Punkt 2079;Piz Sezner von Nordosten
+157;Piz Signina;2848;Nebengipfel;Graubünden;;Signinagruppe;0.5;Piz Fess;52;;Signinagruppe mit Piz Signina erster rechts vom Kirchturm
+158;Piz Surlej;2848;Hauptgipfel;Graubünden;;Engadin;4.75;Piz Misaun;433;Fuorcla Surlej;Piz Surlej über Surlej von Westen
+159;Piz Tarantschun;2769;Nebengipfel;Adula-Alpen;;Splügener Kalkberge;0.86;Piz Tuf;141;;Piz Tartantschun mit Carnusapass links
+160;Piz Terri;3149;Hauptgipfel;Adula-Alpen;;Greina;4.16;Piz Vial;390;Passo Soreda;Piz Terri
+161;Piz Toissa;2657;Hauptgipfel;Graubünden;;Oberhalbstein;1.57;Nordgrat Piz Curvér;310;Furcletta;Piz Toissa über Parsonz
+162;Piz Tomül;2954;Hauptgipfel;Graubünden;;Splügener Kalkberge;5.7;Schwarzhorn (Bruschghorn);534;Tomülpass;Piz Tomül aus SW
+163;Piz Uccello;2724;Nebengipfel;Adula-Alpen;;;0.4;Piz Cavriola;46;Punkt 2678;Piz Uccello von Süden aus San Bernardino
+164;Piz Varuna;3453;Nebengipfel;Graubünden;;Berninagruppe;4.03;Piz Palü;222;Passo di Gembré;Piz Varuna
+165;Piz Zupò;3996;Hauptgipfel;Engadin;;Berninagruppe;2.42;Piz Bernina;405;Fuorcla Crast' Agüzza;Zupo von Argient
+166;Pizzo Badile;3308;Nebengipfel;Bergell;;Bondascagruppe;1.23;Pizzo Cengalo;259;Punkt 3046 E des Pizzo Sertori;Pizzo Badile von Nordwest
+167;Pizzo Campo Tencia;3072;Hauptgipfel;Tessiner Alpen;;;17.05;Scopi;754;Passo Campolungo;Pizzo Campo Tencia
+168;Pizzo Tambo /Tambohorn;3279;Hauptgipfel;Graubünden/Provinz Sondrio;;Tambogruppe;17.06;Güferhorn;1214;Passo del San Bernardino;Pizzo Tambo von Nordost
+169;Planggenstock;1675;Nebengipfel;Voralpen;;Walensee;1.79;Wageten;251;Punkt 1424 Rossweidhöchi;Planggenstock aus Osten, vom Hirzli
+170;Rautispitz;2283;Hauptgipfel;Glarner Alpen;;;6;Vorderglärnisch;469;Punkt 1814;Rautispitz von Mollis
+171;Regitzer Spitz;1135;Hauptgipfel;Rätische Alpen;;Rätikon;2.93;Tannkopf;422;St. Luzisteig;Regitzer Spitz von Westen
+172;Rheinwaldhorn;3402;Hauptgipfel;Adula-Alpen;;;35.2;Bifertenstock;1487;Lukmanierpass;Rheinwaldhorn von Westen
+173;Rienzenstock;2962;Hauptgipfel;Urner Alpen;;;3;Fedenstock;479;Fellilücke;Rienzenstock rechts, von Fellilücke
+174;Rigi-Kulm;1798;Hauptgipfel;Voralpen;;Rigi;13.4;Niederbauenchulm;1288;Arth;Rigi
+175;Rinderhorn;3453;Hauptgipfel;Walliser Alpen;;Gemmi;2.2;Balmhorn;412;Punkt 3036;Rinderhorn
+176;Rossberg;1580;Hauptgipfel;Voralpen;;;8.21;Rigi;807;Schlag bei Sattel;Rossberg von Südosten
+177;Salbitschijen;2981;Nebengipfel;Urner Alpen;;;0.43;Punkt 3060 zum Rorspitzli;109;zum Punkt 3060;Salbitschijen von Westen
+178;Säntis;2502;Hauptgipfel;Appenzeller Alpen;;Alpstein;26;Falknis;2019;Punkt 483 Sargans;über dem Seealpsee, Säntis rechts mit Antenne
+179;Schäfler;1924;Nebengipfel;Appenzeller Alpen;;Alpstein;1.07;Punkt 2033,Altenalp Türm;115;Sattel;Fänerenspitz
+180;Wildhuser Schafberg;2373;Nebengipfel;Toggenburg;;Alpstein;2.35;Säntis;253;Rotsteinpass;von der Laui gesehen
+181;Gross Schärhorn;3295;Hauptgipfel;Urner Alpen;;Schächental;6.75;Tödi;514;Sandpass;Schärhorn vom Klausenpass
+182;Schesaplana;2964;Hauptgipfel;Graubünden/Vorarlberg;;Rätikon;30.25;Ringelspitz;826;Schweizertor;Schesaplana von Seewis aus
+183;Schibenstoll;2236;Nebengipfel;Walensee;;Churfirsten;0.74;Hinterrugg;191;Punkt 2045;Schibestoll zweit von links
+184;Schiahorn;2709;Nebengipfel;Bündner Alpen;;;2.3;Weissfluh;111;Punkt 2596;Schiahorn bei Vollmond
+185;Schilthorn;2970;Hauptgipfel;Berner Alpen;;;0.74;Vorderi Bütlasse;358;Sefinenfurgge;Schilthorn mitte mit Scheerest
+186;Schinberg;722;Nebengipfel;Tafeljura;;;8;Zeiher Homberg;169;Punkt 553 östlich Marchwald;Schinberg links vom Kamin
+187;Schlüechtli;2283;Nebengipfel;Graubünden;;Signinagruppe;1.67;Nolla;81;Gratsenke zum Nolla;Signinagruppe mit Schlüechtli links
+188;Schrattenfluh;2092;Hauptgipfel;Voralpen;;;6.71;Hohgant;776;Salwidili;Schrattenfluh
+189;Schreckhorn;4078;Hauptgipfel;Berner Alpen;;;6;Finsteraarhorn;792;Finsteraarjoch;Schreckhorn vom Faulhorn
+190;Selun;2205;Nebengipfel;Walensee;;Churfirsten;0.78;Frümsel;158;Punkt 2047;Selun rechts
+191;Schwalmis;2246;Nebengipfel;Zentralschweiz;;Vierwaldstättersee;1.55;Risetenstock;141;Hinter Jochli;Schwalmis von Osten aus Richtung Oberbauenstock
+192;Schwarzeberg;1710;Nebengipfel;Simmental;;Diemtigtal;2.86;Wiriehore;225;Schwarzeberg;Schwarzeberg von Norden
+193;Sichelchamm;2269;Nebengipfel;Walensee;;Alvierkette;0.91;Gamsberg (Ostschweiz);74;Punkt 2195;Sichelchamm links
+194;Sieben Hengste;1955;Nebengipfel;Emmentaler Alpen;;;0.67;Burst;276;Sichle;Sieben Hengste von Süden zwischen Burst und Gemmenalphorn
+195;Signalkuppe;4554;Nebengipfel;Wallis/Italien;;Monte Rosa;0.65;Zumsteinspitze;102;Colle Gnifetti;Signalkuppe von der Dufourspitze
+196;Sigriswiler Rothorn;2051;Hauptgipfel;Kanton Bern;;Sigriswilergrat;2.24;Burgfeldstand;372;Sichle;Sigriswiler Rothorn
+197;Silvrettahorn;3244;Nebengipfel;Graubünden;;Rätikon;2.38;Piz Buin;202;Fuorcla dal Cunfin;Silvrettahorn rechts
+198;Six Madun;2928;Hauptgipfel;Graubünden/Uri;;Gotthardmassiv;5.05;Piz Ravetsch;529;Pass Tagliola /Lolenpass;Badus/Six Madun
+199;Speer;1950;Hauptgipfel;Voralpen;;Walensee;8.43;Leistchamm;413;Vorder Höhi;Speer bis Federispitze
+200;Spitzmeilen;2501;Nebengipfel;Glarner Alpen;;Pizol;1.58;Magerrain;81;Wissmilenpass;Spitzmeilen
+201;Stanserhorn;1898;Hauptgipfel;Zentralschweiz;;Urner Alpen;4.64;Arvigrat;500;Ächerli;Stanserhorn vom Brienzer Rothorn gesehen
+202;Stockhorn;2190;Hauptgipfel;Berner Alpen;;Gantrisch-Gebiet;10.7;Fromberghore;399;Chännelpass;Stockhorn von Thun gesehen
+203;Sustenhorn;3503;Hauptgipfel;Urner Alpen;;;7;Dammastock;414;Sustenlimi;Sustenhorn von Osten
+204;Taminser Calanda;2408;Nebengipfel;Bündner Rheintal;;Calanda;0.92;Güllenchopf;43;Sattel;Calanda aus Südwesten
+205;Täschhorn;4491;Nebengipfel;Walliser Alpen;;Mischabel-Gruppe;1.16;Dom;210;Domjoch;Täschhorn links von Südost
+206;Tinzenhorn;3173;Hauptgipfel;Graubünden;;Oberhalbstein;1.36;nördlich Piz Ela;474;Pass digls Orgels;Tinzenhorn
+207;Titlis;3238;Hauptgipfel;Zentralschweiz;;;7.2;Stucklistock;1014;Sustenpass;Titlis von Norden
+208;Tödi;3614;Hauptgipfel;Glarner Alpen;;;42.05;Dammastock;1570;Oberalppass;Tödi von Hätzingen
+209;Tomlishorn;2128;Hauptgipfel;Vierwaldstättersee;;Pilatus;16.98;Brisen;557;Blattli;Pilatus
+210;Tour Sallière;3220;Hauptgipfel;Walliser Alpen;;;1.85;Haute Cime;726;Col de Susanfe;Tour Sallière links
+211;Tschingelhörner;2849;Nebengipfel;Glarner Alpen;;Sardona Tektonik-Arena;1;Ofen (Berg);88;;Tschingelhörner mit Martinsloch
+212;Tweralpspitz;1332;Hauptgipfel;Voralpen;;;10.1;Tanzboden;527;Rickenpass;Tweralpspitz
+213;Vanil Noir;2389;Hauptgipfel;Freiburger Alpen;;;11.05;Gummfluh;1120;Saanenmöser;Vanil Noir von Süden
+214;Vorderglärnisch;2327;Nebengipfel;Glarner Alpen;;Glärnisch;1.38;über dem Höchtor;267;Furggle;Vorderglärnisch von Norden
+215;Vrenelisgärtli;2904;Nebengipfel;Glarner Alpen;;Glärnisch;1.38;Bächistock;149;Punkt 2755 Schwandergrat;Vrenelisgärtli
+216;Wasenhorn;3246;Hauptgipfel;Monte Leone-Sankt Gotthard-Alpen;;;1.98;Monte Leone;484;Chaltwasserpass;Wasenhorn aus Richtung Simplon
+217;Weisshorn;4505;Hauptgipfel;Walliser Alpen;;;20.8;Liskamm;1234;Furggjoch;Weisshorn
+218;Weissmies;4017;Hauptgipfel;Walliser Alpen;;;1.92;Dom;1185;Mondellipass;Weissmies
+219;Wetterhorn;3692;Nebengipfel;Berner Alpen;;;0.82;Mittelhorn;184;Wettersattel;Wetterhorn von Grindelwald Grund
+220;Wildhorn;3248;Hauptgipfel;;;Wildhorngruppe;23.5;Rinderhorn;930;Gemmipass;Wildhorn Ostgipfel
+221;Wildstrubel;3244;Hauptgipfel;;;Wildstrubel;14.71;Wildhorn;815;Rawilpass;Wildstrubel von Norden
+222;Gross Windgällen;3187;Hauptgipfel;Uri;;;4.6;Schärhorn;552;Ruchälenpass;Windgällen, vorne Chli Windgällen, hinten Gross Windgällen
+223;Wiriehore;2304;Nebengipfel;Simmental;;Diemtigtal;2.21;Cheibehore;273;Punkt 2031 in Richtung Gurbssattel;Wiriehorn rechts des Schwarzeberg von Norden
+224;Wissberg;2627;Nebengipfel;Urner Alpen;;Stotzig Berg;0.44;Stotzig Berg;30;neben Gipfelaufbau;Wissberg von der Fuehrenalp
+225;Wissigstock;2847;Hauptgipfel;Urner Alpen;;;2.29;Blackenstock;329;Punkt 2558;Wissigstock rechts, Engelberger Rotstock links.jpg
+226;Wyssi Frau;3650;Nebengipfel;Berner Alpen;;Blüemlisalpgruppe;1.05;Blüemlisalphorn;130;SW;Wyssi Frau, der mittlere der drei höchsten Gipfel
+227;Zervreilahorn;2898;Nebengipfel;Graubünden;;;1.95;Furggeltihorn;186;Punkt 2714 zum Furggeltihorn;Zervreilahorn von Nordosten
+228;Zinalrothorn;4221;Hauptgipfel;Walliser Alpen;;;4.5;Weisshorn;490;Hohlichtpass;Zinalrothorn
+229;Zindlenspitz;2097;Nebengipfel;Glarner Alpen;;;1.3;Brünnelistock;195;Punkt 1902 Rossalpeli;Zindlenspitz von Norden
+230;Zuestoll;2235;Nebengipfel;Walensee;;Churfirsten;0.63;Brisi;225;Paliis Nideri;Zuestoll dritter von links
+231;Zumsteinspitze;4563;Nebengipfel;Wallis/Italien;;Monte Rosa;0.8;Dufourspitze;110;Grenzsattel;Zumsteinspitze vom Nordend
