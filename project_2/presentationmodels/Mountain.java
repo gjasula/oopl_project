@@ -1,4 +1,4 @@
-package project_2;
+package ch.fhnw.oop.project_2.presentationmodels;
 
 
 import javafx.beans.property.SimpleStringProperty;
@@ -38,6 +38,7 @@ public class Mountain {
         setProminencePoint(line[10]);
         setCaption(line[11]);
     }
+
 
     @Override
     public boolean equals(Object o) {
