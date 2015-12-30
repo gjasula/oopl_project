@@ -2,7 +2,6 @@ package project_2;
 
 
 import javafx.beans.binding.Bindings;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -23,6 +22,7 @@ public class AppUI extends BorderPane {
     private GridPane editor;
     private ImageView imageView;
     private Image image;
+    private Mountain mountain;
     private ListView<String> listView;
     private TableView<Mountain> tabelle;
 
@@ -232,10 +232,9 @@ public class AppUI extends BorderPane {
         //showMountainDetails(null);
 
         //Listener of tableview
-        tabelle.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showMountainDetails(newValue));
-
-
-        //nameTextField.textProperty().bind(tabelle.idProperty().addListener().);
+        model.selectedMountainIdProperty().addListener((observable, oldValue, newValue) -> {
+            tabelle.getSelectionModel().select((int) newValue);
+        });
 
     }
 
@@ -266,11 +265,14 @@ public class AppUI extends BorderPane {
     //Hilfsklasse zur Überwachung der Tableview
     private void showMountainDetails(Mountain mountain) {
 
+
         if (mountain != null) {
-            nameTextField.setText(mountain.getName());
+            titleLabel.setText(mountain.getName());
         }
         else {
-            nameTextField.setText("");
+            titleLabel.setText("");
         }
     }
+
+
 }

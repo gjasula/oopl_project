@@ -1,5 +1,7 @@
 package project_2;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -12,7 +14,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -40,22 +45,51 @@ public class AppModel {
     private final StringProperty rangeTextField = new SimpleStringProperty();
     private final StringProperty captionTextField = new SimpleStringProperty();
 
-
     private static final String FILE_NAME = "mountains.csv";
 
     private static final String TAB = "\\t";
 
-    private final ObservableList<Mountain> mountain = FXCollections.observableArrayList();
+    private final IntegerProperty selectedMountainId = new SimpleIntegerProperty(-1);
+
+    private final ObservableList<Mountain> allMountains = FXCollections.observableArrayList();
+
+    private final Mountain mountainProxy = new Mountain();
 
     public AppModel() {
-        mountain.addAll(readFromFile());
+        allMountains.addAll(readFromFile());
+
+        selectedMountainIdProperty().addListener((observable, oldValue, newValue) -> {
+                    Mountain oldSelection = getMountain((int) oldValue);
+                    Mountain newSelection = getMountain((int) newValue);
+
+                    if (oldSelection != null) {
+                        mountainProxy.mountainIdProperty().unbindBidirectional(oldSelection.mountainIdProperty());
+                    }
+
+                    if (newSelection != null) {
+                        mountainProxy.mountainIdProperty().bindBidirectional(newSelection.mountainIdProperty());
+                    }
+                }
+        );
+
+    }
+
+    //public AppModel(Mountain... mountains) {this(new ArrayList(Arrays.asList(mountains))); }
+
+
+    private Mountain getMountain(int id) {
+        Optional<Mountain> pmOptional = allMountains.stream()
+                .filter(mountain -> Mountain.getMountainId() == id)
+                //.filter(mountain -> Object.equals(mountain.getMountainId(), id))
+                .findAny();
+        return  pmOptional.isPresent() ? pmOptional.get() : null;
     }
 
     public void save() {
         try (BufferedWriter writer = Files.newBufferedWriter(getPath(FILE_NAME, true))) {
             writer.write("#id;name;height;type;region;cantons;range;isolation;isolationPoint;prominence;prominencePoint;caption");
             writer.newLine();
-            mountain.stream().forEach(mountain -> {
+            allMountains.stream().forEach(mountain -> {
                 try {
                     writer.write(mountain.infoAsLine());
                     writer.newLine();
@@ -105,8 +139,10 @@ public class AppModel {
     }
 
     public ObservableList<Mountain> getMountains() {
-        return mountain;
+        return allMountains;
     }
+
+    public final Mountain getMountainProxy() { return mountainProxy; }
 
     //Getter and setter
     public String getWindowTitle() {
@@ -287,5 +323,17 @@ public class AppModel {
 
     public void setCaptionTextField(String captionTextField) {
         this.captionTextField.set(captionTextField);
+    }
+
+    public int getSelectedMountainId() {
+        return selectedMountainId.get();
+    }
+
+    public IntegerProperty selectedMountainIdProperty() {
+        return selectedMountainId;
+    }
+
+    public void setSelectedMountainId(int selectedMountainId) {
+        this.selectedMountainId.set(selectedMountainId);
     }
 }
