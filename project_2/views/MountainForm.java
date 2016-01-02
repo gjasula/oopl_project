@@ -3,12 +3,14 @@ package ch.fhnw.oop.project_2.views;
 import ch.fhnw.oop.project_2.presentationmodels.Mountain;
 import ch.fhnw.oop.project_2.presentationmodels.MountainPM;
 import javafx.beans.binding.Bindings;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
+import javafx.util.converter.NumberStringConverter;
 
 /**
  * Created by heimo on 30.12.15.
@@ -87,9 +89,9 @@ public class MountainForm extends GridPane implements ViewMixin<MountainPM> {
 
         //Editor construction
         setMinWidth(600);
-
         setVgap(20);
         setHgap(5);
+        setPadding(new Insets(20));
         ColumnConstraints cc = new ColumnConstraints();
         cc.setHgrow(Priority.ALWAYS);
         getColumnConstraints().addAll(cc, cc, cc, cc);
@@ -126,18 +128,22 @@ public class MountainForm extends GridPane implements ViewMixin<MountainPM> {
     public void addBindings() {
 
         Mountain proxy = model.getMountainProxy();
+
+        nameTextField.setText(proxy.nameProperty().toString());
+        //Bindings.bind(model.selectedMountainIdProperty()model.selectedMountainIdProperty(), nameTextField.textProperty());
+        //Bindings.bindBidirectional(heightTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
         //Textfield properties
-        nameTextField.textProperty().bind(model.nameTextFieldProperty());
-        heightTextField.textProperty().bind(model.heigthTextFieldProperty());
-        isolationPointTextField.textProperty().bind(model.isolationPointTextFieldProperty());
-        prominencePointTextField.textProperty().bind(model.prominencePointTextFieldProperty());
-        isolationTextField.textProperty().bind(model.isolationTextFieldProperty());
-        prominenceTextField.textProperty().bind(model.prominenceTextFieldProperty());
-        typeTextField.textProperty().bind(model.typeTextFieldProperty());
-        regionTextField.textProperty().bind(model.regionTextFieldProperty());
-        cantonsTextField.textProperty().bind(model.cantonsTextFieldProperty());
-        rangeTextField.textProperty().bind(model.rangeTextFieldProperty());
-        captionTextField.textProperty().bind(model.captionTextFieldProperty());
+        nameTextField.textProperty().bindBidirectional(proxy.nameProperty());
+        heightTextField.textProperty().bindBidirectional(proxy.heightProperty());
+        isolationPointTextField.textProperty().bindBidirectional(proxy.isolationPointProperty());
+        prominencePointTextField.textProperty().bindBidirectional(proxy.prominencePointProperty());
+        isolationTextField.textProperty().bindBidirectional(proxy.isolationProperty());
+        prominenceTextField.textProperty().bindBidirectional(proxy.prominenceProperty());
+        typeTextField.textProperty().bindBidirectional(proxy.typeProperty());
+        regionTextField.textProperty().bindBidirectional(proxy.regionProperty());
+        cantonsTextField.textProperty().bindBidirectional(proxy.cantonsProperty());
+        rangeTextField.textProperty().bindBidirectional(proxy.rangeProperty());
+        captionTextField.textProperty().bindBidirectional(proxy.captionProperty());
 
         numberOfMountainsLabel.textProperty().bind(Bindings.size(model.getMountains()).asString());
 
@@ -149,4 +155,6 @@ public class MountainForm extends GridPane implements ViewMixin<MountainPM> {
 
 
     }
+
+
 }

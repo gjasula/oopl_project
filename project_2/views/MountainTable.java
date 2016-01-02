@@ -3,12 +3,14 @@ package ch.fhnw.oop.project_2.views;
 import ch.fhnw.oop.project_2.presentationmodels.Mountain;
 import ch.fhnw.oop.project_2.presentationmodels.MountainPM;
 import javafx.beans.binding.Bindings;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
+import javafx.scene.control.*;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.util.converter.NumberStringConverter;
 
 /**
  * Created by heimo on 30.12.15.
@@ -36,6 +38,7 @@ public class MountainTable extends VBox implements ViewMixin<MountainPM> {
 
         mountainOverview = initialiseMountainTable();
         numberOfMountainsLabel = new Label();
+
     }
 
     private TableView<Mountain> initialiseMountainTable() {
@@ -48,10 +51,20 @@ public class MountainTable extends VBox implements ViewMixin<MountainPM> {
         //Set data of each column
         idCol.setCellValueFactory(cell -> cell.getValue().mountainIdProperty());
         nameCol.setCellValueFactory(cell -> cell.getValue().nameProperty());
-        heightCol.setCellValueFactory(cell -> cell.getValue().heightProperty());
+
+        nameCol.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Mountain, String>>() {
+            @Override
+            public void handle(TableColumn.CellEditEvent<Mountain, String> event) {
+                //((Mountain) event.getTableView().getItems().get(event.getTablePosition().getRow()).setName(event.getNewValue());
+            }
+        });
 
         //Add columns to tableview
         tableView.getColumns().addAll(idCol, nameCol, heightCol);
+
+        // Select first item of the list to ensure we are always rendering first item in right panel.
+        tableView.getSelectionModel().select(0);
+
         return tableView;
     }
 
@@ -59,22 +72,35 @@ public class MountainTable extends VBox implements ViewMixin<MountainPM> {
     public void layoutControls() {
         setMinWidth(220);
         setVgrow(mountainOverview, Priority.ALWAYS);
-
+        int row = model.getSelectedMountainId();
+        //mountainOverview.requestFocus();
+        //mountainOverview.getFocusModel().focus(row);
+        mountainOverview.getSelectionModel().select(row);
         getChildren().addAll(mountainOverview, numberOfMountainsLabel);
     }
 
     @Override
     public void addBindings() {
+
+        Mountain proxy = model.getMountainProxy();
+
+        //mountainOverview.focusModelProperty().bindBidirectional(getPresentationModel().selectedMountainIdProperty());
+        //mountainOverview.selectionModelProperty().bindBidirectional(getPresentationModel().selectedMountainIdProperty());
+
+        // Label to show how much mountains we have
         numberOfMountainsLabel.textProperty().bind(Bindings.size(model.getMountains()).asString());
+        //mountainOverview.getSelectionModel().selectedItemProperty(proxy.nameProperty().bind(model.nameTextFieldProperty()););
     }
 
     @Override
     public void addValueChangedListeners() {
 
-        //Listener of tableview
-        model.selectedMountainIdProperty().addListener((observable, oldValue, newValue) -> {
-            mountainOverview.getSelectionModel().select((int) newValue);
+        mountainOverview.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                Mountain mountain = mountainOverview.getSelectionModel().getSelectedItem();
+                System.out.println(mountain.toString());
+            }
         });
     }
-
 }

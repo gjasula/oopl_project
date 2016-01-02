@@ -23,6 +23,9 @@ public class Mountain {
     private final StringProperty prominencePoint = new SimpleStringProperty();
     private final StringProperty caption = new SimpleStringProperty();
 
+    // Default Constructor
+    public Mountain () {    }
+
     // Constructor
     public Mountain(String[] line) {
         setMountainId(line[0]);
@@ -225,4 +228,5 @@ public class Mountain {
     public void setCaption(String caption) {
         this.caption.set(caption);
     }
+
 }

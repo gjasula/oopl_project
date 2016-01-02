@@ -30,6 +30,8 @@ public class AppStarter extends Application {
         primaryStage.setMinWidth(800);
 
         primaryStage.show();
+
+        model.selectedMountainIdProperty();
     }
 
     public static void main(String[] args) throws Exception {launch(args); }

@@ -2,6 +2,7 @@ package ch.fhnw.oop.project_2.views;
 
 import ch.fhnw.oop.project_2.presentationmodels.Mountain;
 import ch.fhnw.oop.project_2.presentationmodels.MountainPM;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -58,6 +59,7 @@ public class MountainHeader extends GridPane implements ViewMixin<MountainPM> {
 
         setVgap(20);
         setHgap(5);
+        setPadding(new Insets(20));
         ColumnConstraints cc = new ColumnConstraints();
         cc.setHgrow(Priority.ALWAYS);
         getColumnConstraints().addAll(cc, cc);
@@ -79,10 +81,10 @@ public class MountainHeader extends GridPane implements ViewMixin<MountainPM> {
 
 
         //Add all labels and fields to the editor
-        //add(titleLabel,0,0); //child, columnIndex, rowIndex, columnSpan, rowSpan
-        //add(titleHeightLabel,0,1); //child, columnIndex, rowIndex, columnSpan, rowSpan
-        //add(titleRegionLabel,0,2); //child, columnIndex, rowIndex, columnSpan, rowSpan
-        //add(imageView,1,0); //Image anzeige oben rechts
+        add(titleLabel,0,0); //child, columnIndex, rowIndex, columnSpan, rowSpan
+        add(titleHeightLabel,0,1); //child, columnIndex, rowIndex, columnSpan, rowSpan
+        add(titleRegionLabel,0,2); //child, columnIndex, rowIndex, columnSpan, rowSpan
+        add(imageView,1,0); //Image anzeige oben rechts
     }
 
     @Override

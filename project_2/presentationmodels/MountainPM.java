@@ -1,9 +1,7 @@
 package ch.fhnw.oop.project_2.presentationmodels;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -51,8 +49,6 @@ public class MountainPM {
 
     public final Mountain mountainProxy = new Mountain();
 
-    //public MountainPM() {this(allMountains());}
-
     public MountainPM() {
         allMountains.addAll(readFromFile());
 
@@ -64,20 +60,35 @@ public class MountainPM {
                 mountainProxy.nameProperty().bindBidirectional(oldSelection.nameProperty());
                 mountainProxy.heightProperty().bindBidirectional(oldSelection.heightProperty());
                 mountainProxy.regionProperty().bindBidirectional(oldSelection.regionProperty());
+                mountainProxy.isolationPointProperty().bindBidirectional(oldSelection.isolationPointProperty());
+                mountainProxy.prominencePointProperty().bindBidirectional(oldSelection.prominencePointProperty());
+                mountainProxy.isolationProperty().bindBidirectional(oldSelection.isolationProperty());
+                mountainProxy.prominenceProperty().bindBidirectional(oldSelection.prominenceProperty());
+                mountainProxy.typeProperty().bindBidirectional(oldSelection.typeProperty());
+                mountainProxy.cantonsProperty().bindBidirectional(oldSelection.cantonsProperty());
+                mountainProxy.rangeProperty().bindBidirectional(oldSelection.rangeProperty());
+                mountainProxy.captionProperty().bindBidirectional(oldSelection.captionProperty());
             }
             if (newSelection != null) {
                 mountainProxy.mountainIdProperty().bindBidirectional(newSelection.mountainIdProperty());
                 mountainProxy.nameProperty().bindBidirectional(newSelection.nameProperty());
                 mountainProxy.heightProperty().bindBidirectional(newSelection.heightProperty());
                 mountainProxy.regionProperty().bindBidirectional(newSelection.regionProperty());
+                mountainProxy.isolationPointProperty().bindBidirectional(newSelection.isolationPointProperty());
+                mountainProxy.prominencePointProperty().bindBidirectional(newSelection.prominencePointProperty());
+                mountainProxy.isolationProperty().bindBidirectional(newSelection.isolationProperty());
+                mountainProxy.prominenceProperty().bindBidirectional(newSelection.prominenceProperty());
+                mountainProxy.typeProperty().bindBidirectional(newSelection.typeProperty());
+                mountainProxy.cantonsProperty().bindBidirectional(newSelection.cantonsProperty());
+                mountainProxy.rangeProperty().bindBidirectional(newSelection.rangeProperty());
+                mountainProxy.captionProperty().bindBidirectional(newSelection.captionProperty());
             }
         });
     }
 
-
     public final Mountain getMountainProxy () { return mountainProxy; }
 
-    private Mountain getMountain (int id) {
+    public Mountain getMountain (int id) {
         Optional<Mountain> pmOptional = allMountains.stream()
                 .filter(mountain -> Objects.equals(mountain.getMountainId(), id))
                 .findAny();
@@ -102,12 +113,13 @@ public class MountainPM {
     }
 
     public void remove() {
-        //int selectedIndex = Inde;
-        //mountain.remove(selectedIndex);
+
     }
 
     public void add() {
-
+        //nameTextFieldProperty().getValue(), heigthTextFieldProperty().getValue()
+        //allMountains.add(String.valueOf(allMountains.size()));
+        //new Mountain(nameTextFieldProperty().getValue())
     }
 
     private List<Mountain> readFromFile() {
