@@ -12,6 +12,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.util.converter.NumberStringConverter;
 
+import static java.lang.String.valueOf;
+
 /**
  * Created by heimo on 30.12.15.
  */
@@ -129,9 +131,18 @@ public class MountainForm extends GridPane implements ViewMixin<MountainPM> {
 
         Mountain proxy = model.getMountainProxy();
 
-        nameTextField.setText(proxy.nameProperty().toString());
-        //Bindings.bind(model.selectedMountainIdProperty()model.selectedMountainIdProperty(), nameTextField.textProperty());
-        //Bindings.bindBidirectional(heightTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(nameTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(heightTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(captionTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(cantonsTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(isolationPointTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(isolationTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(prominencePointTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(prominenceTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(typeTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(regionTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(rangeTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
+
         //Textfield properties
         nameTextField.textProperty().bindBidirectional(proxy.nameProperty());
         heightTextField.textProperty().bindBidirectional(proxy.heightProperty());
@@ -153,7 +164,13 @@ public class MountainForm extends GridPane implements ViewMixin<MountainPM> {
     @Override
     public void addValueChangedListeners() {
 
+        nameTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            /* model.selectedMountainIdProperty() */
+        });
 
+        model.selectedMountainIdProperty().addListener((observable, oldValue, newValue) -> {
+            /* nameTextField.textProperty() */
+        });
     }
 
 

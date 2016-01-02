@@ -51,6 +51,7 @@ public class MountainTable extends VBox implements ViewMixin<MountainPM> {
         //Set data of each column
         idCol.setCellValueFactory(cell -> cell.getValue().mountainIdProperty());
         nameCol.setCellValueFactory(cell -> cell.getValue().nameProperty());
+        heightCol.setCellValueFactory(cell -> cell.getValue().heightProperty());
 
         nameCol.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Mountain, String>>() {
             @Override
@@ -73,9 +74,7 @@ public class MountainTable extends VBox implements ViewMixin<MountainPM> {
         setMinWidth(220);
         setVgrow(mountainOverview, Priority.ALWAYS);
         int row = model.getSelectedMountainId();
-        //mountainOverview.requestFocus();
-        //mountainOverview.getFocusModel().focus(row);
-        mountainOverview.getSelectionModel().select(row);
+        //mountainOverview.getSelectionModel().select();
         getChildren().addAll(mountainOverview, numberOfMountainsLabel);
     }
 
@@ -84,12 +83,19 @@ public class MountainTable extends VBox implements ViewMixin<MountainPM> {
 
         Mountain proxy = model.getMountainProxy();
 
+        //Bindings.bindBidirectional(model.selectedMountainIdProperty(), proxy.nameProperty(), new NumberStringConverter());
+
+       // mountainOverview.selectionModelProperty().bindBidirectional(getPresentationModel().selectedMountainIdProperty().getValue(String.valueOf(model.selectedMountainIdProperty())));
+
+        mountainOverview.getSelectionModel().getSelectedItem().nameProperty().bind(proxy.nameProperty());
+        //mountainOverview.getSelectionModel().getSelectedItem().heightProperty().bind(proxy.heightProperty());
+        //mountainOverview.getSelectionModel().getSelectedItem().cantonsProperty().bind(proxy.cantonsProperty());
+
         //mountainOverview.focusModelProperty().bindBidirectional(getPresentationModel().selectedMountainIdProperty());
-        //mountainOverview.selectionModelProperty().bindBidirectional(getPresentationModel().selectedMountainIdProperty());
+        //mountainOverview.selectionModelProperty().bindBidirectional(getPresentationModel().selectedMountainIdProperty(selected));
 
         // Label to show how much mountains we have
         numberOfMountainsLabel.textProperty().bind(Bindings.size(model.getMountains()).asString());
-        //mountainOverview.getSelectionModel().selectedItemProperty(proxy.nameProperty().bind(model.nameTextFieldProperty()););
     }
 
     @Override
@@ -99,8 +105,19 @@ public class MountainTable extends VBox implements ViewMixin<MountainPM> {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 Mountain mountain = mountainOverview.getSelectionModel().getSelectedItem();
+                //mountain.nameProperty(model.nameTextFieldProperty().setValue(););
                 System.out.println(mountain.toString());
+                //mountainOverview.getSelectionModel().select((int) newValue);
+                //model.setSelectedMountainId(mo.getMountain());
             }
         });
+
+        mountainOverview.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            model.setSelectedMountainId(Integer.parseInt(newValue.getMountainId()));
+        });
+//
+        //model.selectedMountainIdProperty().addListener((observable, oldValue, newValue) -> {
+        //    mountainOverview.getSelectionModel().select((int) newValue);
+        //});
     }
 }
