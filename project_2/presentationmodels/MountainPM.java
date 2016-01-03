@@ -23,25 +23,9 @@ import java.util.stream.Stream;
 public class MountainPM {
     private final StringProperty windowTitle = new SimpleStringProperty("Mountain App - J\u00fcrg Steudler");
 
-    //Label which change their content
-    private final StringProperty titleLabel = new SimpleStringProperty();
-    private final StringProperty titleHeightLabel = new SimpleStringProperty();
-    private final StringProperty titleRegionLabel = new SimpleStringProperty();
-
-    private final StringProperty nameTextField = new SimpleStringProperty();
-    private final StringProperty heigthTextField = new SimpleStringProperty();
-    private final StringProperty isolationPointTextField = new SimpleStringProperty();
-    private final StringProperty prominencePointTextField = new SimpleStringProperty();
-    private final StringProperty isolationTextField = new SimpleStringProperty();
-    private final StringProperty prominenceTextField = new SimpleStringProperty();
-    private final StringProperty typeTextField = new SimpleStringProperty();
-    private final StringProperty regionTextField = new SimpleStringProperty();
-    private final StringProperty cantonsTextField = new SimpleStringProperty();
-    private final StringProperty rangeTextField = new SimpleStringProperty();
-    private final StringProperty captionTextField = new SimpleStringProperty();
-
     private final IntegerProperty selectedMountainId = new SimpleIntegerProperty(-1);
     private final IntegerProperty selectedIndex = new SimpleIntegerProperty(-1);
+    private final ObjectProperty<Mountain> pictures = new SimpleObjectProperty<>();
 
     private final ObservableList<Command> undoStack = FXCollections.observableArrayList();
     private final ObservableList<Command> redoStack = FXCollections.observableArrayList();
@@ -49,7 +33,7 @@ public class MountainPM {
     private final BooleanProperty undoDisabled = new SimpleBooleanProperty();
     private final BooleanProperty redoDisabled = new SimpleBooleanProperty();
 
-    private final ObservableList<Mountain> allMountains = FXCollections.observableArrayList();
+    private ObservableList<Mountain> allMountains = FXCollections.observableArrayList();
 
     private static final String FILE_NAME = "mountains.csv";
 
@@ -78,7 +62,7 @@ public class MountainPM {
 
         selectedIndexProperty().addListener((observable1, oldId, newIndex) -> {
             try {
-               // setSelectedMountainId(allMountains.get((Integer) newIndex).getMountainId());
+               setSelectedMountainId(allMountains.get((Integer) newIndex).getMountainId());
             } catch (Exception e) {
                 setSelectedMountainId(-1);
             }
@@ -87,83 +71,45 @@ public class MountainPM {
         selectedMountainIdProperty().addListener((observable, oldValue, newValue) -> {
             Mountain oldSelection = getMountain((int) oldValue);
             Mountain newSelection = getMountain((int) newValue);
+
             if (oldSelection != null){
-                //unbindFromProxy(oldSelection);
-                mountainProxy.mountainIdProperty().unbindBidirectional(oldSelection.mountainIdProperty());
-                mountainProxy.nameProperty().unbindBidirectional(oldSelection.nameProperty());
-                mountainProxy.heightProperty().unbindBidirectional(oldSelection.heightProperty());
-                mountainProxy.regionProperty().unbindBidirectional(oldSelection.regionProperty());
-                mountainProxy.isolationPointProperty().unbindBidirectional(oldSelection.isolationPointProperty());
-                mountainProxy.prominencePointProperty().unbindBidirectional(oldSelection.prominencePointProperty());
-                mountainProxy.isolationProperty().unbindBidirectional(oldSelection.isolationProperty());
-                mountainProxy.prominenceProperty().unbindBidirectional(oldSelection.prominenceProperty());
-                mountainProxy.typeProperty().unbindBidirectional(oldSelection.typeProperty());
-                mountainProxy.cantonsProperty().unbindBidirectional(oldSelection.cantonsProperty());
-                mountainProxy.rangeProperty().unbindBidirectional(oldSelection.rangeProperty());
-                mountainProxy.captionProperty().unbindBidirectional(oldSelection.captionProperty());
+                unbindFromProxy(oldSelection);
+                disableUndoSupport(oldSelection);
             }
             if (newSelection != null) {
-                mountainProxy.mountainIdProperty().bindBidirectional(newSelection.mountainIdProperty());
-                mountainProxy.nameProperty().bindBidirectional(newSelection.nameProperty());
-                mountainProxy.heightProperty().bindBidirectional(newSelection.heightProperty());
-                mountainProxy.regionProperty().bindBidirectional(newSelection.regionProperty());
-                mountainProxy.isolationPointProperty().bindBidirectional(newSelection.isolationPointProperty());
-                mountainProxy.prominencePointProperty().bindBidirectional(newSelection.prominencePointProperty());
-                mountainProxy.isolationProperty().bindBidirectional(newSelection.isolationProperty());
-                mountainProxy.prominenceProperty().bindBidirectional(newSelection.prominenceProperty());
-                mountainProxy.typeProperty().bindBidirectional(newSelection.typeProperty());
-                mountainProxy.cantonsProperty().bindBidirectional(newSelection.cantonsProperty());
-                mountainProxy.rangeProperty().bindBidirectional(newSelection.rangeProperty());
-                mountainProxy.captionProperty().bindBidirectional(newSelection.captionProperty());
+                bindToProxy(newSelection);
+                enableUndoSupport(newSelection);
             }
         });
-        setSelectedMountainId(0);
+        setSelectedMountainId(1);
     }
 
     public final Mountain getMountainProxy () { return mountainProxy; }
 
-    public Mountain getMountain (int id) {
-        Optional<Mountain> pmOptional = allMountains.stream()
-                .filter(mountain -> Objects.equals(mountain.getMountainId(), id))
-                .findAny();
-                return pmOptional.isPresent() ? pmOptional.get() : null;
-    }
-
-    public void save() {
-        try (BufferedWriter writer = Files.newBufferedWriter(getPath(FILE_NAME, true))) {
-            writer.write("#id;name;height;type;region;cantons;range;isolation;isolationPoint;prominence;prominencePoint;caption");
-            writer.newLine();
-            allMountains.stream().forEach(mountain -> {
-                try {
-                    writer.write(mountain.infoAsLine());
-                    writer.newLine();
-                } catch (IOException e) {
-                    throw new IllegalStateException(e);
-                }
-            });
-        } catch (IOException e) {
-            throw new IllegalStateException("save failed");
-        }
+    public ObservableList<Mountain> getMountains() {
+        return allMountains;
     }
 
     public void remove() {
+        Mountain toBeRemoved = getMountain(getSelectedMountainId());
+        int currentPosition = allMountains.indexOf(toBeRemoved);
+
+        removeFromList(toBeRemoved);
+
+        redoStack.clear();
+        undoStack.add(0, new RemoveCommand(this, toBeRemoved, currentPosition));
 
     }
 
-    public void addNewMountain() {
+    public void add() {
         int newId = allMountains.size();
         Mountain newMountain = new Mountain();
-        //newMountain.setMountainId(Integer.valueOf(newId));
+        newMountain.setMountainId(Integer.valueOf(newId));
 
         addToList(newId-1, newMountain);
 
         redoStack.clear();
         undoStack.add(0, new AddCommand(this, newMountain, allMountains.size() - 1));
-    }
-    public void add() {
-        //nameTextFieldProperty().getValue(), heigthTextFieldProperty().getValue()
-        //allMountains.add(String.valueOf(allMountains.size()));
-        //new Mountain(nameTextFieldProperty().getValue())
     }
 
     void setPropertyValue(Property property, Object newValue) {
@@ -174,17 +120,17 @@ public class MountainPM {
 
     void addToList(int position, Mountain mountain) {
         allMountains.add(position, mountain);
-        //setSelectedMountainId(mountain.getMountainId((int)));
+        setSelectedMountainId(mountain.getMountainId());
     }
 
     void removeFromList(Mountain mountain) {
-        //unbindFromProxy(mountain);
+        unbindFromProxy(mountain);
         disableUndoSupport(mountain);
 
         allMountains.remove(mountain);
 
         if(!allMountains.isEmpty()){
-            //setSelectedMountainId(allMountains.get(0).getMountainId());
+            setSelectedMountainId(allMountains.get(0).getMountainId());
         }
     }
 
@@ -210,25 +156,89 @@ public class MountainPM {
         cmd.redo();
     }
 
+    public void save() {
+        try (BufferedWriter writer = Files.newBufferedWriter(getPath(FILE_NAME, true))) {
+            writer.write("#id;name;height;type;region;cantons;range;isolation;isolationPoint;prominence;prominencePoint;caption");
+            writer.newLine();
+            allMountains.stream().forEach(mountain -> {
+                try {
+                    writer.write(mountain.infoAsLine());
+                    writer.newLine();
+                } catch (IOException e) {
+                    throw new IllegalStateException(e);
+                }
+            });
+        } catch (IOException e) {
+            throw new IllegalStateException("save failed");
+        }
+    }
+
     private void disableUndoSupport(Mountain mountain) {
         mountain.mountainIdProperty().removeListener(propertyChangeListenerForUndoSupport);
         mountain.nameProperty().removeListener(propertyChangeListenerForUndoSupport);
         mountain.regionProperty().removeListener(propertyChangeListenerForUndoSupport);
-
+        mountain.heightProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.cantonsProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.typeProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.isolationPointProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.isolationProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.prominencePointProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.prominenceProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.captionProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.rangeProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.filenameProperty().removeListener(propertyChangeListenerForUndoSupport);
+        mountain.picturesProperty().removeListener(propertyChangeListenerForUndoSupport);
     }
 
     private void enableUndoSupport(Mountain mountain) {
-        mountain.mountainIdProperty().removeListener(propertyChangeListenerForUndoSupport);
-        mountain.nameProperty().removeListener(propertyChangeListenerForUndoSupport);
-        mountain.regionProperty().removeListener(propertyChangeListenerForUndoSupport);
-
+        mountain.mountainIdProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.nameProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.regionProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.heightProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.cantonsProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.typeProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.isolationPointProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.isolationProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.prominencePointProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.prominenceProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.captionProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.rangeProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.filenameProperty().addListener(propertyChangeListenerForUndoSupport);
+        mountain.picturesProperty().addListener(propertyChangeListenerForUndoSupport);
     }
 
     private void bindToProxy(Mountain mountain) {
-        mountain.mountainIdProperty().bindBidirectional(mountain.mountainIdProperty());
-        mountain.nameProperty().bindBidirectional(mountain.nameProperty());
-        mountain.regionProperty().bindBidirectional(mountain.regionProperty());
+        mountainProxy.mountainIdProperty().bindBidirectional(mountain.mountainIdProperty());
+        mountainProxy.nameProperty().bindBidirectional(mountain.nameProperty());
+        mountainProxy.regionProperty().bindBidirectional(mountain.regionProperty());
+        mountainProxy.heightProperty().bindBidirectional(mountain.heightProperty());
+        mountainProxy.cantonsProperty().bindBidirectional(mountain.cantonsProperty());
+        mountainProxy.typeProperty().bindBidirectional(mountain.typeProperty());
+        mountainProxy.isolationPointProperty().bindBidirectional(mountain.isolationPointProperty());
+        mountainProxy.isolationProperty().bindBidirectional(mountain.isolationProperty());
+        mountainProxy.prominencePointProperty().bindBidirectional(mountain.prominencePointProperty());
+        mountainProxy.prominenceProperty().bindBidirectional(mountain.prominenceProperty());
+        mountainProxy.captionProperty().bindBidirectional(mountain.captionProperty());
+        mountainProxy.rangeProperty().bindBidirectional(mountain.rangeProperty());
+        mountainProxy.filenameProperty().bindBidirectional(mountain.filenameProperty());
+        mountainProxy.picturesProperty().bindBidirectional(mountain.picturesProperty());
+    }
 
+    private void unbindFromProxy(Mountain mountain) {
+        mountainProxy.mountainIdProperty().unbindBidirectional(mountain.mountainIdProperty());
+        mountainProxy.nameProperty().unbindBidirectional(mountain.nameProperty());
+        mountainProxy.regionProperty().unbindBidirectional(mountain.regionProperty());
+        mountainProxy.heightProperty().unbindBidirectional(mountain.heightProperty());
+        mountainProxy.cantonsProperty().unbindBidirectional(mountain.cantonsProperty());
+        mountainProxy.typeProperty().unbindBidirectional(mountain.typeProperty());
+        mountainProxy.isolationPointProperty().unbindBidirectional(mountain.isolationPointProperty());
+        mountainProxy.isolationProperty().unbindBidirectional(mountain.isolationProperty());
+        mountainProxy.prominencePointProperty().unbindBidirectional(mountain.prominencePointProperty());
+        mountainProxy.prominenceProperty().unbindBidirectional(mountain.prominenceProperty());
+        mountainProxy.captionProperty().unbindBidirectional(mountain.captionProperty());
+        mountainProxy.rangeProperty().unbindBidirectional(mountain.rangeProperty());
+        mountainProxy.filenameProperty().unbindBidirectional(mountain.filenameProperty());
+        mountainProxy.picturesProperty().unbindBidirectional(mountain.picturesProperty());
     }
 
     private List<Mountain> readFromFile() {
@@ -258,11 +268,12 @@ public class MountainPM {
         }
     }
 
-    public ObservableList<Mountain> getMountains() {
-        return allMountains;
+    public Mountain getMountain (int id) {
+        Optional<Mountain> pmOptional = allMountains.stream()
+                .filter(mountain -> mountain.getMountainId() == id)
+                .findAny();
+        return pmOptional.isPresent() ? pmOptional.get() : null;
     }
-
-
 
     //Getter and setter
     public String getWindowTitle() {
@@ -275,174 +286,6 @@ public class MountainPM {
 
     public void setWindowTitle(String windowTitle) {
         this.windowTitle.set(windowTitle);
-    }
-
-    public String getTitleLabel() {
-        return titleLabel.get();
-    }
-
-    public StringProperty titleLabelProperty() {
-        return titleLabel;
-    }
-
-    public void setTitleLabel(String titleLabel) {
-        this.titleLabel.set(titleLabel);
-    }
-
-    public String getTitleHeightLabel() {
-        return titleHeightLabel.get();
-    }
-
-    public StringProperty titleHeightLabelProperty() {
-        return titleHeightLabel;
-    }
-
-    public void setTitleHeightLabel(String titleHeightLabel) {
-        this.titleHeightLabel.set(titleHeightLabel);
-    }
-
-    public String getTitleRegionLabel() {
-        return titleRegionLabel.get();
-    }
-
-    public StringProperty titleRegionLabelProperty() {
-        return titleRegionLabel;
-    }
-
-    public void setTitleRegionLabel(String titleRegionLabel) {
-        this.titleRegionLabel.set(titleRegionLabel);
-    }
-
-    public String getNameTextField() {
-        return nameTextField.get();
-    }
-
-    public StringProperty nameTextFieldProperty() {
-        return nameTextField;
-    }
-
-    public void setNameTextField(String nameTextField) {
-        this.nameTextField.set(nameTextField);
-    }
-
-    public String getHeigthTextField() {
-        return heigthTextField.get();
-    }
-
-    public StringProperty heigthTextFieldProperty() {
-        return heigthTextField;
-    }
-
-    public void setHeigthTextField(String heigthTextField) {
-        this.heigthTextField.set(heigthTextField);
-    }
-
-    public String getIsolationPointTextField() {
-        return isolationPointTextField.get();
-    }
-
-    public StringProperty isolationPointTextFieldProperty() {
-        return isolationPointTextField;
-    }
-
-    public void setIsolationPointTextField(String isolationPointTextField) {
-        this.isolationPointTextField.set(isolationPointTextField);
-    }
-
-    public String getProminencePointTextField() {
-        return prominencePointTextField.get();
-    }
-
-    public StringProperty prominencePointTextFieldProperty() {
-        return prominencePointTextField;
-    }
-
-    public void setProminencePointTextField(String prominencePointTextField) {
-        this.prominencePointTextField.set(prominencePointTextField);
-    }
-
-    public String getIsolationTextField() {
-        return isolationTextField.get();
-    }
-
-    public StringProperty isolationTextFieldProperty() {
-        return isolationTextField;
-    }
-
-    public void setIsolationTextField(String isolationTextField) {
-        this.isolationTextField.set(isolationTextField);
-    }
-
-    public String getProminenceTextField() {
-        return prominenceTextField.get();
-    }
-
-    public StringProperty prominenceTextFieldProperty() {
-        return prominenceTextField;
-    }
-
-    public void setProminenceTextField(String prominenceTextField) {
-        this.prominenceTextField.set(prominenceTextField);
-    }
-
-    public String getTypeTextField() {
-        return typeTextField.get();
-    }
-
-    public StringProperty typeTextFieldProperty() {
-        return typeTextField;
-    }
-
-    public void setTypeTextField(String typeTextField) {
-        this.typeTextField.set(typeTextField);
-    }
-
-    public String getRegionTextField() {
-        return regionTextField.get();
-    }
-
-    public StringProperty regionTextFieldProperty() {
-        return regionTextField;
-    }
-
-    public void setRegionTextField(String regionTextField) {
-        this.regionTextField.set(regionTextField);
-    }
-
-    public String getCantonsTextField() {
-        return cantonsTextField.get();
-    }
-
-    public StringProperty cantonsTextFieldProperty() {
-        return cantonsTextField;
-    }
-
-    public void setCantonsTextField(String cantonsTextField) {
-        this.cantonsTextField.set(cantonsTextField);
-    }
-
-    public String getRangeTextField() {
-        return rangeTextField.get();
-    }
-
-    public StringProperty rangeTextFieldProperty() {
-        return rangeTextField;
-    }
-
-    public void setRangeTextField(String rangeTextField) {
-        this.rangeTextField.set(rangeTextField);
-    }
-
-    public String getCaptionTextField() {
-        return captionTextField.get();
-    }
-
-    public StringProperty captionTextFieldProperty() {
-        return captionTextField;
-    }
-
-    public void setCaptionTextField(String captionTextField) {
-        this.captionTextField.set(captionTextField);
     }
 
     public int getSelectedMountainId() {

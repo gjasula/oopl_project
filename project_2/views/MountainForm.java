@@ -3,6 +3,8 @@ package ch.fhnw.oop.project_2.views;
 import ch.fhnw.oop.project_2.presentationmodels.Mountain;
 import ch.fhnw.oop.project_2.presentationmodels.MountainPM;
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -11,6 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.util.converter.NumberStringConverter;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 
 import static java.lang.String.valueOf;
 
@@ -123,7 +126,7 @@ public class MountainForm extends GridPane implements ViewMixin<MountainPM> {
         add(rangeLabel,2,4);
         add(rangeTextField,3,4);
         add(captionLabel,0,5);
-        add(captionTextField,1,5);
+        add(captionTextField,1,5,3,1);
     }
 
     @Override
@@ -131,47 +134,25 @@ public class MountainForm extends GridPane implements ViewMixin<MountainPM> {
 
         Mountain proxy = model.getMountainProxy();
 
-        Bindings.bindBidirectional(nameTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(heightTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(captionTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(cantonsTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(isolationPointTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(isolationTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(prominencePointTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(prominenceTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(typeTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(regionTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-        Bindings.bindBidirectional(rangeTextField.textProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
-
         //Textfield properties
         nameTextField.textProperty().bindBidirectional(proxy.nameProperty());
-        heightTextField.textProperty().bindBidirectional(proxy.heightProperty());
+        Bindings.bindBidirectional(heightTextField.textProperty(), proxy.heightProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(isolationTextField.textProperty(), proxy.isolationProperty(), new NumberStringConverter());
+        Bindings.bindBidirectional(prominenceTextField.textProperty(), proxy.prominenceProperty(), new NumberStringConverter());;
         isolationPointTextField.textProperty().bindBidirectional(proxy.isolationPointProperty());
         prominencePointTextField.textProperty().bindBidirectional(proxy.prominencePointProperty());
-        isolationTextField.textProperty().bindBidirectional(proxy.isolationProperty());
-        prominenceTextField.textProperty().bindBidirectional(proxy.prominenceProperty());
         typeTextField.textProperty().bindBidirectional(proxy.typeProperty());
         regionTextField.textProperty().bindBidirectional(proxy.regionProperty());
         cantonsTextField.textProperty().bindBidirectional(proxy.cantonsProperty());
         rangeTextField.textProperty().bindBidirectional(proxy.rangeProperty());
         captionTextField.textProperty().bindBidirectional(proxy.captionProperty());
 
+        //Label properties
         numberOfMountainsLabel.textProperty().bind(Bindings.size(model.getMountains()).asString());
-
-
     }
 
     @Override
     public void addValueChangedListeners() {
 
-        nameTextField.textProperty().addListener((observable, oldValue, newValue) -> {
-            /* model.selectedMountainIdProperty() */
-        });
-
-        model.selectedMountainIdProperty().addListener((observable, oldValue, newValue) -> {
-            /* nameTextField.textProperty() */
-        });
     }
-
-
 }

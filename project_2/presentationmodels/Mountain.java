@@ -1,8 +1,7 @@
 package ch.fhnw.oop.project_2.presentationmodels;
 
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 /**
  * Created by steudler on 29.09.2015.
@@ -10,38 +9,40 @@ import javafx.beans.property.StringProperty;
 public class Mountain {
 
     // Initialization
-    private final StringProperty mountainId = new SimpleStringProperty();
+    private final IntegerProperty mountainId = new SimpleIntegerProperty();
     private final StringProperty name = new SimpleStringProperty();
-    private final StringProperty height = new SimpleStringProperty();
+    private final IntegerProperty height = new SimpleIntegerProperty();
     private final StringProperty type = new SimpleStringProperty();
     private final StringProperty region = new SimpleStringProperty();
     private final StringProperty cantons = new SimpleStringProperty();
     private final StringProperty range = new SimpleStringProperty();
-    private final StringProperty isolation = new SimpleStringProperty();
-    private final StringProperty isolationPoint = new SimpleStringProperty();
-    private final StringProperty prominence = new SimpleStringProperty();
+    private final DoubleProperty isolation = new SimpleDoubleProperty();
+    private final SimpleStringProperty isolationPoint = new SimpleStringProperty();
+    private final IntegerProperty prominence = new SimpleIntegerProperty();
     private final StringProperty prominencePoint = new SimpleStringProperty();
     private final StringProperty caption = new SimpleStringProperty();
+    private final StringProperty filename = new SimpleStringProperty();
+    private final ObjectProperty<Mountain> pictures = new SimpleObjectProperty<>();
+
 
     // Default Constructor
     public Mountain () {    }
 
     // Constructor
     public Mountain(String[] line) {
-        setMountainId(line[0]);
+        setMountainId(Integer.parseInt(line[0]));
         setName(line[1]);
-        setHeight(line[2]);
+        setHeight(Integer.parseInt(line[2]));
         setType(line[3]);
         setRegion(line[4]);
         setCantons(line[5]);
         setRange(line[6]);
-        setIsolation(line[7]);
+        setIsolation(Double.parseDouble(line[7]));
         setIsolationPoint(line[8]);
-        setProminence(line[9]);
+        setProminence(Integer.parseInt(line[9]));
         setProminencePoint(line[10]);
         setCaption(line[11]);
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -54,26 +55,26 @@ public class Mountain {
 
         Mountain mountain = (Mountain) o;
 
-        return getMountainId().equals(mountain.getMountainId());
+        return getMountainId() == mountain.getMountainId();
     }
 
-    @Override
-    public int hashCode() {
-        return getMountainId().hashCode();
-    }
+    //@Override
+    //public int hashCode() {
+    //    return getMountainId().hashCode();
+    //}
 
     public String infoAsLine() {
         return String.join("\t",
-                getMountainId(),
+                Integer.toString(getMountainId()),
                 getName(),
-                getHeight(),
+                Integer.toString(getHeight()),
                 getType(),
                 getRegion(),
                 getCantons(),
                 getRange(),
-                getIsolation(),
+                Double.toString(getIsolation()),
                 getIsolationPoint(),
-                getProminence(),
+                Integer.toString(getProminence()),
                 getProminencePoint(),
                 getCaption());
     }
@@ -85,15 +86,16 @@ public class Mountain {
 
     // Getter and Setter
 
-    public String getMountainId() {
+
+    public int getMountainId() {
         return mountainId.get();
     }
 
-    public StringProperty mountainIdProperty() {
+    public IntegerProperty mountainIdProperty() {
         return mountainId;
     }
 
-    public void setMountainId(String mountainId) {
+    public void setMountainId(int mountainId) {
         this.mountainId.set(mountainId);
     }
 
@@ -109,15 +111,15 @@ public class Mountain {
         this.name.set(name);
     }
 
-    public String getHeight() {
+    public int getHeight() {
         return height.get();
     }
 
-    public StringProperty heightProperty() {
+    public IntegerProperty heightProperty() {
         return height;
     }
 
-    public void setHeight(String height) {
+    public void setHeight(int height) {
         this.height.set(height);
     }
 
@@ -169,15 +171,15 @@ public class Mountain {
         this.range.set(range);
     }
 
-    public String getIsolation() {
+    public double getIsolation() {
         return isolation.get();
     }
 
-    public StringProperty isolationProperty() {
+    public DoubleProperty isolationProperty() {
         return isolation;
     }
 
-    public void setIsolation(String isolation) {
+    public void setIsolation(double isolation) {
         this.isolation.set(isolation);
     }
 
@@ -185,7 +187,7 @@ public class Mountain {
         return isolationPoint.get();
     }
 
-    public StringProperty isolationPointProperty() {
+    public SimpleStringProperty isolationPointProperty() {
         return isolationPoint;
     }
 
@@ -193,15 +195,15 @@ public class Mountain {
         this.isolationPoint.set(isolationPoint);
     }
 
-    public String getProminence() {
+    public int getProminence() {
         return prominence.get();
     }
 
-    public StringProperty prominenceProperty() {
+    public IntegerProperty prominenceProperty() {
         return prominence;
     }
 
-    public void setProminence(String prominence) {
+    public void setProminence(int prominence) {
         this.prominence.set(prominence);
     }
 
@@ -229,4 +231,27 @@ public class Mountain {
         this.caption.set(caption);
     }
 
+    public String getFilename() {
+        return filename.get();
+    }
+
+    public StringProperty filenameProperty() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename.set(mountainIdProperty().toString() + "-1.jpg");
+    }
+
+    public Mountain getPictures() {
+        return pictures.get();
+    }
+
+    public ObjectProperty<Mountain> picturesProperty() {
+        return pictures;
+    }
+
+    public void setPictures(Mountain pictures) {
+        this.pictures.set(pictures);
+    }
 }

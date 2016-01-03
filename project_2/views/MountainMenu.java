@@ -50,16 +50,10 @@ public class MountainMenu extends HBox implements ViewMixin<MountainPM> {
 
     @Override
     public void layoutControls() {
-        //saveButton.setMaxWidth(Double.MAX_VALUE);
-        //addButton.setMaxWidth(Double.MAX_VALUE);
-        //removeButton.setMaxWidth(Double.MAX_VALUE);
-        //undoButton.setMaxWidth(Double.MAX_VALUE);
-        //redoButton.setMaxWidth(Double.MAX_VALUE);
 
         //Toolbar on top
         setSpacing(20);
         getChildren().addAll(saveButton, addButton, removeButton, undoButton, redoButton, searchTextfield);
-
 
         //Add different CSS classes to element
         getStyleClass().add("topmenu");
@@ -70,6 +64,8 @@ public class MountainMenu extends HBox implements ViewMixin<MountainPM> {
         addButton.setOnAction(event -> model.add());
         saveButton.setOnAction(event -> model.save());
         removeButton.setOnAction(event -> model.remove());
+        undoButton.setOnAction(event -> model.undo());
+        redoButton.setOnAction(event -> model.redo());
     }
 
     @Override

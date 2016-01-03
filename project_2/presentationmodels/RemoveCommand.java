@@ -16,8 +16,8 @@ public class RemoveCommand implements Command {
 
     @Override
     public void undo() {
-        //model.allMountains().add(pos, removed);
-       // model.setSelectedMountainId(removed.getMountainId());
+        model.getMountains().add(pos, removed);
+        model.setSelectedMountainId(removed.getMountainId());
     }
 
     @Override

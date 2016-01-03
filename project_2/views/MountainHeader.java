@@ -2,6 +2,7 @@ package ch.fhnw.oop.project_2.views;
 
 import ch.fhnw.oop.project_2.presentationmodels.Mountain;
 import ch.fhnw.oop.project_2.presentationmodels.MountainPM;
+import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -11,6 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.shape.Circle;
+import javafx.util.converter.NumberStringConverter;
 
 /**
  * Created by heimo on 30.12.15.
@@ -37,18 +39,18 @@ public class MountainHeader extends GridPane implements ViewMixin<MountainPM> {
         init();
     }
 
-
     @Override
     public MountainPM getPresentationModel() {return model;}
 
     @Override
     public void initializeControls() {
         //Labels and textfield of Editor
-        titleLabel = new Label("test");
-        titleHeightLabel = new Label ("titleheightlabel");
-        titleRegionLabel = new Label ("titleregionlabel");
+        titleLabel = new Label();
+        titleHeightLabel = new Label ();
+        titleRegionLabel = new Label ();
 
         imageView = new ImageView();
+        //imageView.setImage(image -> new MountainTableCell());
     }
 
     @Override
@@ -67,7 +69,8 @@ public class MountainHeader extends GridPane implements ViewMixin<MountainPM> {
         rc.setMinHeight(10);
         getRowConstraints().addAll(rc, rc, rc);
 
-        // image = new Image(getClass().getResourceAsStream("mountains/" + model.mountainProxy.getMountainId() + "-1.jpg"));
+        Mountain proxy = model.getMountainProxy();
+        //image = new Image(getClass().getResourceAsStream("mountains/" + proxy.getFilename()));
         circle = new Circle();
         circle.setCenterX(100.0f);
         circle.setCenterY(100.0f);
@@ -77,14 +80,13 @@ public class MountainHeader extends GridPane implements ViewMixin<MountainPM> {
         imageView.setImage(image);
         imageView.setFitHeight(200);
         imageView.setPreserveRatio(true);
-        // imageView.setClip();
-
+        //imageView.setClip();
 
         //Add all labels and fields to the editor
         add(titleLabel,0,0); //child, columnIndex, rowIndex, columnSpan, rowSpan
         add(titleHeightLabel,0,1); //child, columnIndex, rowIndex, columnSpan, rowSpan
         add(titleRegionLabel,0,2); //child, columnIndex, rowIndex, columnSpan, rowSpan
-        add(imageView,1,0); //Image anzeige oben rechts
+        add(imageView,1,0, 2,2); //Image anzeige oben rechts
     }
 
     @Override
@@ -93,13 +95,14 @@ public class MountainHeader extends GridPane implements ViewMixin<MountainPM> {
 
         //Title properties are connected to the textfieldproperty
         titleLabel.textProperty().bind(proxy.nameProperty());
-        titleHeightLabel.textProperty().bind(proxy.heightProperty());
+        titleHeightLabel.textProperty().bind(proxy.heightProperty().asString());
         titleRegionLabel.textProperty().bind(proxy.regionProperty());
+        //imageView.imageProperty().bind(proxy.filenameProperty());
+        //Bindings.bindBidirectional(imageView.imageProperty(), model.selectedMountainIdProperty(), new NumberStringConverter());
     }
 
     @Override
     public void addValueChangedListeners() {
-
 
     }
 }
