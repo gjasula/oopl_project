@@ -1,0 +1,304 @@
+
+.root {
+    -fx-basic-color: #6f2834;
+    -fx-darker-color: #561f28;
+    -fx-darkest-color: #3d161d;
+
+    -fx-light-color: #cd7483;
+    -fx-lighter-color: #d68d99;
+    -fx-lightest-color: #dfa6b0;
+    -fx-text-color: #44607c;
+    -fx-dark-text-color: #384f66;
+    -fx-darkest-text-color: #2c3e50;
+    -fx-light-text-color: #c5d1d4;
+    -fx-lightest-text-color: #ecf0f1;
+    -fx-white-text-color: #ffffff;
+    -fx-light-gray-color: #b1c2c6;
+    -fx-lighter-gray-color: #c5d1d4;
+    -fx-lightest-gray-color: #ecf0f1;
+}
+
+.text {
+    -fx-font-family: 'Roboto', sans-serif;
+}
+
+.root{
+
+}
+
+.icons{
+    -fx-font-family: FontAwesome;
+    -fx-font-size: 16px;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.icons:hover{
+    -fx-text-fill: -fx-white-text-color;
+}
+
+.icon-label .text {
+    -fx-font-family: FontAwesome !important;
+}
+
+.button {
+    -fx-border-color: null;
+    -fx-background-color: -fx-lightest-color;
+    -fx-background-radius: 14px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.button .text{
+    -fx-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: -fx-basic-color;
+}
+
+.button:hover .text{
+    -fx-fill: white;
+}
+
+.item-title{
+    -fx-font-size: 11pt;
+    -fx-font-family: "Roboto", sans-serif;
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
+}
+
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Main Menu on top                                                            *
+ *                                                                             *
+ ******************************************************************************/
+.main-menu{
+    -fx-background-color: -fx-basic-color;
+    -fx-padding: 10;
+}
+
+.main-menu .button {
+    -fx-border-color: null;
+    -fx-background-color: -fx-darker-color;
+    -fx-background-radius: 2px;
+    -fx-font-size: 14px;
+}
+
+.main-menu .button .text{
+
+}
+
+.main-menu .button:hover {
+    -fx-background-color: -fx-darkest-color;
+}
+
+.main-menu .button:hover .text{
+
+}
+
+#save-btn {
+    -fx-font-family: 'FontAwesome' !important;
+    -fx-icon-text: "\uf0c7";
+
+}
+
+#add-btn {
+    -fx-font-family: 'FontAwesome' !important;
+    -fx-icon-text: "\uf055";
+}
+
+#remove-btn {
+    -fx-font-family: 'FontAwesome' !important;
+    -fx-icon-text: "\uf056";
+}
+
+#undo-btn {
+    -fx-font-family: 'FontAwesome' !important;
+    -fx-icon-text: "\uf0e2";
+}
+
+#redo-btn {
+    -fx-font-family: 'FontAwesome' !important;
+    -fx-icon-text: "\uf0e3";
+}
+
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Table View                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.table-view{
+    -fx-background-color: -fx-light-gray-color;
+    -fx-text-fill: -fx-white-text-color;
+    -fx-padding: 0;
+}
+
+.column-header-background {
+    -fx-background-color: -fx-light-gray-color;
+}
+
+/* Selected row */
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-lightest-color;
+    -fx-border-color: -fx-lightest-color;
+    -fx-text-fill: -fx-white-text-color;
+}
+
+/* Selected row when table not focused */
+.table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-lighter-color;
+    -fx-border-color: -fx-lighter-color;
+    -fx-text-fill: -fx-lightest-text-color;
+}
+
+/* Row hovered */
+.table-view:row-selection .table-row-cell:filled:hover {
+    -fx-background-color: -fx-lighter-color;
+    -fx-border-color: -fx-lighter-color;
+    -fx-text-fill: -fx-light-text-color;
+    -fx-cursor: hand;
+}
+
+/* Selected row hovered */
+.table-view:focused .table-row-cell:filled:focused:selected:hover {
+    -fx-background-color: -fx-lighter-color;
+    -fx-border-color: -fx-lighter-color;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+/* Selected row hovered when table not focused */
+.table-view:row-selection .table-row-cell:filled:focused:hover {
+    -fx-background-color: -fx-lightest-color;
+    -fx-border-color: -fx-lightest-color;
+    -fx-text-fill: -fx-light-text-color;
+}
+/*******************************************************************************
+ *                                                                             *
+ * Mountain Header                                                             *
+ *                                                                             *
+ ******************************************************************************/
+.mountain-header{
+    -fx-background-color: -fx-light-gray-color;
+    -fx-padding: 10;
+}
+
+.mountain-header .mountain-title .text {
+    -fx-font-family: 'Roboto Bold';
+    -fx-font-size: 24pt;
+    -fx-text-fill: -fx-dark-text-color;
+    -fx-padding: 30 0 5 0;
+
+}
+.mountain-header .mountain-subtitle .text {
+    -fx-font-size: 18pt;
+    -fx-text-fill: -fx-text-color;
+    -fx-padding: 0 0 0 0;
+
+}
+/*******************************************************************************
+ *                                                                             *
+ * Mountain Form                                                               *
+ *                                                                             *
+ ******************************************************************************/
+.mountain-details{
+    -fx-background-color: -fx-lighter-gray-color;
+}
+
+.mountain-form {
+    -fx-background-color: -fx-lighter-gray-color;
+    -fx-padding: 10;
+}
+.mountain-form .text {
+
+     -fx-text-fill: -fx-darkest-text-color;
+     -fx-padding: 10;
+ }
+
+.mountain-form .text-input {
+    -fx-background-color: -fx-lightest-gray-color ;
+    -fx-text-fill: -fx-dark-text-color;
+    -fx-padding: 10;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Scroll Bar                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .decrement-button:hover {
+    -fx-background-color: -fx-basic-color;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .decrement-arrow {
+    -fx-background-color: -fx-basic-color;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .decrement-arrow:hover {
+    -fx-background-color: -fx-white-text-color;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .increment-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .increment-button:hover {
+    -fx-background-color: -fx-basic-color;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .increment-arrow {
+    -fx-background-color: -fx-basic-color;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .increment-arrow:hover {
+    -fx-background-color: -fx-white-text-color;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .thumb {
+    -fx-background-insets: 6 0 6 0;
+}
+
+.scroll-bar .thumb {
+    -fx-border-color: transparent;
+    -fx-background-color: -fx-basic-color;
+    -fx-background-insets: 0 6 0 6;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: -fx-darker-color;
+    -fx-cursor: hand;
+
+}
+
+.scroll-bar .thumb:selected {
+    -fx-background-color: -fx-darker-color;
+}
+
+.scroll-bar .thumb:focused {
+    -fx-background-color: -fx-darker-color;
+}

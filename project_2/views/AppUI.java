@@ -9,6 +9,7 @@ import javafx.scene.layout.*;
 /**
  * Created by jslenovo on 04.11.2015.
  */
+
 public class AppUI extends BorderPane implements ViewMixin<MountainPM> {
 
     //Generate model
@@ -20,10 +21,13 @@ public class AppUI extends BorderPane implements ViewMixin<MountainPM> {
     private MountainForm mountainForm;
 
     private VBox mountainDetail;
-    private SplitPane splitPane;
 
     @Override
     public MountainPM getPresentationModel () {return model;}
+
+    //Generate UI elements
+    private SplitPane splitPane;
+
 
     //Constructor
     public AppUI(MountainPM model) {
@@ -40,22 +44,29 @@ public class AppUI extends BorderPane implements ViewMixin<MountainPM> {
         mountainMenu = new MountainMenu(model);
         mountainTable = new MountainTable(model);
         mountainHeader = new MountainHeader(model);
-        mountainForm = new MountainForm(model);
+        mountainForm= new MountainForm(model);
 
         mountainDetail = new VBox();
         splitPane = new SplitPane();
     }
 
-
     public void layoutControls() {
 
-        //Add mountainhHeader and mountainForm together
+        // Add splitpane in the middle
         mountainDetail.getChildren().addAll(mountainHeader, mountainForm);
-        splitPane.getItems().addAll(mountainTable, mountainDetail);
 
+        splitPane.getItems().addAll(mountainTable, mountainDetail);
         //Place all elements on specified position
         setTop(mountainMenu);
-        setCenter(splitPane);
+        setCenter(new SplitPane(mountainTable, mountainDetail));
+
+        mountainMenu.getStyleClass().add("main-menu");
+        mountainTable.getStyleClass().add("table-view");
+
+        mountainDetail.getStyleClass().add("mountain-details");
+        mountainHeader.getStyleClass().add("mountain-header");
+        mountainForm.getStyleClass().add("mountain-form");
+
     }
 
     public void addBindings(){

@@ -1,0 +1,44 @@
+.text {
+    -fx-font-family: "Roboto";
+}
+
+.material-toolbar {
+    -fx-pref-height: 64;
+    -fx-padding: 16 12 16 12;
+}
+
+
+
+.material-toolbar-text {
+    -fx-font-size: 24;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+
+
+#content-wrapper {
+    -fx-background-color: white;
+    -fx-alignment: center;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(two-pass-box , darkslategray, 3, 0.1, 0, 0);
+}
+
+
+#background-pane {
+    -fx-background-color: lightgray;
+    -fx-alignment: center;
+}
+
+.material-toolbar-action {
+    -fx-skin: "com.guigarage.material.MaterialToolbarButtonSkin";
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-padding: 0 2 0 2;
+    -fx-font-size: 24;
+    -fx-text-fill: white;
+    -fx-alignment: bottom-center;
+}
+
+.material-toolbar-action .text {
+    -fx-font-family: FontAwesome;
+}

@@ -38,11 +38,11 @@ public class MountainMenu extends HBox implements ViewMixin<MountainPM> {
     public void initializeControls() {
 
         // Buttons
-        saveButton = new Button("Save");
-        addButton = new Button("Add");
-        removeButton = new Button("Remove");
-        undoButton = new Button("Undo");
-        redoButton = new Button("Redo");
+        saveButton = new Button();
+        addButton = new Button();
+        removeButton = new Button();
+        undoButton = new Button();
+        redoButton = new Button();
 
         // Search Field
         searchTextfield = new TextField();
@@ -55,17 +55,27 @@ public class MountainMenu extends HBox implements ViewMixin<MountainPM> {
         setSpacing(20);
         getChildren().addAll(saveButton, addButton, removeButton, undoButton, redoButton, searchTextfield);
 
-        //Add different CSS classes to element
-        getStyleClass().add("topmenu");
-        searchTextfield.getStyleClass().add("search");
+        //Add different ID to Buttons CSS
+        saveButton.setText('\uf0c7' + "");
+        addButton.setText('\uf055' + "");
+        removeButton.setText('\uf056' + "");
+        undoButton.setText('\uf0e2' + "");
+        redoButton.setText('\uf0e3' + "");
+
+        //Add different ID to Buttons CSS
+        saveButton.setId("save-btn");
+        addButton.setId("add-btn");
+        removeButton.setId("remove-btn");
+        undoButton.setId("undo-btn");
+        redoButton.setId("redo-btn");
+
+
     }
     @Override
     public void addEventHandlers() {
-        addButton.setOnAction(event -> model.add());
+        //addButton.setOnAction(event -> model.add());
         saveButton.setOnAction(event -> model.save());
         removeButton.setOnAction(event -> model.remove());
-        undoButton.setOnAction(event -> model.undo());
-        redoButton.setOnAction(event -> model.redo());
     }
 
     @Override
