@@ -35,7 +35,7 @@ public class MountainPM {
 
     private ObservableList<Mountain> allMountains = FXCollections.observableArrayList();
 
-    private static final String FILE_NAME = "mountains.csv";
+    private static final String FILE_NAME = "../resources/data/mountains.csv";
 
     private static final String TAB = "\\t";
 
@@ -81,7 +81,7 @@ public class MountainPM {
                 enableUndoSupport(newSelection);
             }
         });
-        setSelectedMountainId(1);
+        setSelectedMountainId(0);
     }
 
     public final Mountain getMountainProxy () { return mountainProxy; }
@@ -244,7 +244,7 @@ public class MountainPM {
     private List<Mountain> readFromFile() {
         try (Stream<String> stream = getStreamOfLines(FILE_NAME)) {
             return stream.skip(1)                              // erste Zeile ist die Headerzeile; ueberspringen
-                    .map(s -> new Mountain(s.split(TAB))) // aus jeder Zeile ein Objekt machen
+                    .map(s -> new Mountain(s.split(";"))) // aus jeder Zeile ein Objekt machen
                     .collect(Collectors.toList());        // alles aufsammeln
         }
     }

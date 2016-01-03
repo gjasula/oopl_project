@@ -3,15 +3,12 @@ package ch.fhnw.oop.project_2.views;
 import ch.fhnw.oop.project_2.presentationmodels.Mountain;
 import ch.fhnw.oop.project_2.presentationmodels.MountainPM;
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.util.converter.NumberStringConverter;
 
 /**
  * Created by heimo on 30.12.15.

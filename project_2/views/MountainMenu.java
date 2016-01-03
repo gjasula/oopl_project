@@ -73,9 +73,11 @@ public class MountainMenu extends HBox implements ViewMixin<MountainPM> {
     }
     @Override
     public void addEventHandlers() {
-        //addButton.setOnAction(event -> model.add());
+        addButton.setOnAction(event -> model.add());
         saveButton.setOnAction(event -> model.save());
         removeButton.setOnAction(event -> model.remove());
+        redoButton.setOnAction(event -> model.redo());
+        undoButton.setOnAction(event -> model.undo());
     }
 
     @Override

@@ -2,7 +2,6 @@ package ch.fhnw.oop.project_2.views;
 
 import ch.fhnw.oop.project_2.presentationmodels.Mountain;
 import ch.fhnw.oop.project_2.presentationmodels.MountainPM;
-import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -12,7 +11,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.shape.Circle;
-import javafx.util.converter.NumberStringConverter;
 
 /**
  * Created by heimo on 30.12.15.
@@ -87,6 +85,11 @@ public class MountainHeader extends GridPane implements ViewMixin<MountainPM> {
         add(titleHeightLabel,0,1); //child, columnIndex, rowIndex, columnSpan, rowSpan
         add(titleRegionLabel,0,2); //child, columnIndex, rowIndex, columnSpan, rowSpan
         add(imageView,1,0, 2,2); //Image anzeige oben rechts
+
+        // Add CSS Classes
+        titleLabel.getStyleClass().add("mountain-title");
+        titleHeightLabel.getStyleClass().add("mountain-subtitle");
+        titleRegionLabel.getStyleClass().add("mountain-subtitle");
     }
 
     @Override
